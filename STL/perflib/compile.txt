@@ -1,0 +1,2 @@
+g++ monitor.cpp -o monitor.o -pthread -std=c++0x /usr/local/lib/libpfm.a
+

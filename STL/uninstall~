@@ -1,0 +1,8 @@
+
+rm /usr/local/include/timing.h
+
+rm /usr/local/include/perf.h
+
+rm /usr/local/include/reporting.h
+
+

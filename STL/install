@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+cp timing/timing.h /usr/local/include/timing.h
+
+cp reporting/reporting.h /usr/local/include/reporting.h
+
+cp perflib/perf.h /usr/local/include/perf.h
+
+cp threading/threading.h /usr/local/include/threading.h

@@ -1,0 +1,3376 @@
+
+Detected EVENTS:
+	Row   Event Name                                         Event ID   PMU Code  
+------------------------------
+	1     UNHALTED_CORE_CYCLES                               37748736   18        
+	Description: count core clock cycles whenever the clock signal on the specific core is running (not halted)
+	---------------
+	2     INSTRUCTION_RETIRED                                37748737   18        
+	Description: count the number of instructions at retirement. For instructions that consists of multiple micro-ops, this event counts the retirement of the last micro-op of the instruction
+	---------------
+	3     UNHALTED_REFERENCE_CYCLES                          37748738   18        
+	Description: count reference clock cycles while the clock signal on the specific core is running. The reference clock operates at a fixed frequency, irrespective of core frequency changes due to performance state transitions
+	---------------
+	4     LLC_REFERENCES                                     37748739   18        
+	Description: count each request originating from the core to reference a cache line in the last level cache. The count may include speculation, but excludes cache line fills due to hardware prefetch
+	---------------
+	5     LLC_MISSES                                         37748740   18        
+	Description: count each cache miss condition for references to the last level cache. The event count may include speculation, but excludes cache line fills due to hardware prefetch
+	---------------
+	6     BRANCH_INSTRUCTIONS_RETIRED                        37748741   18        
+	Description: count branch instructions at retirement. Specifically, this event counts the retirement of the last micro-op of a branch instruction
+	---------------
+	7     MISPREDICTED_BRANCH_RETIRED                        37748742   18        
+	Description: count mispredicted branch instructions at retirement. Specifically, this event counts at retirement of the last micro-op of a branch instruction in the architectural path of the execution and experienced misprediction in the branch prediction hardware
+	---------------
+	8     PERF_COUNT_HW_CPU_CYCLES                           106954752  51        
+	Description: PERF_COUNT_HW_CPU_CYCLES
+	---------------
+	9     CYCLES                                             106954753  51        
+	Description: PERF_COUNT_HW_CPU_CYCLES
+	---------------
+	10    CPU-CYCLES                                         106954754  51        
+	Description: PERF_COUNT_HW_CPU_CYCLES
+	---------------
+	11    PERF_COUNT_HW_INSTRUCTIONS                         106954755  51        
+	Description: PERF_COUNT_HW_INSTRUCTIONS
+	---------------
+	12    INSTRUCTIONS                                       106954756  51        
+	Description: PERF_COUNT_HW_INSTRUCTIONS
+	---------------
+	13    PERF_COUNT_HW_CACHE_REFERENCES                     106954757  51        
+	Description: PERF_COUNT_HW_CACHE_REFERENCES
+	---------------
+	14    CACHE-REFERENCES                                   106954758  51        
+	Description: PERF_COUNT_HW_CACHE_REFERENCES
+	---------------
+	15    PERF_COUNT_HW_CACHE_MISSES                         106954759  51        
+	Description: PERF_COUNT_HW_CACHE_MISSES
+	---------------
+	16    CACHE-MISSES                                       106954760  51        
+	Description: PERF_COUNT_HW_CACHE_MISSES
+	---------------
+	17    PERF_COUNT_HW_BRANCH_INSTRUCTIONS                  106954761  51        
+	Description: PERF_COUNT_HW_BRANCH_INSTRUCTIONS
+	---------------
+	18    BRANCH-INSTRUCTIONS                                106954762  51        
+	Description: PERF_COUNT_HW_BRANCH_INSTRUCTIONS
+	---------------
+	19    BRANCHES                                           106954763  51        
+	Description: PERF_COUNT_HW_BRANCH_INSTRUCTIONS
+	---------------
+	20    PERF_COUNT_HW_BRANCH_MISSES                        106954764  51        
+	Description: PERF_COUNT_HW_BRANCH_MISSES
+	---------------
+	21    BRANCH-MISSES                                      106954765  51        
+	Description: PERF_COUNT_HW_BRANCH_MISSES
+	---------------
+	22    PERF_COUNT_HW_BUS_CYCLES                           106954766  51        
+	Description: PERF_COUNT_HW_BUS_CYCLES
+	---------------
+	23    BUS-CYCLES                                         106954767  51        
+	Description: PERF_COUNT_HW_BUS_CYCLES
+	---------------
+	24    PERF_COUNT_HW_STALLED_CYCLES_FRONTEND              106954768  51        
+	Description: PERF_COUNT_HW_STALLED_CYCLES_FRONTEND
+	---------------
+	25    STALLED-CYCLES-FRONTEND                            106954769  51        
+	Description: PERF_COUNT_HW_STALLED_CYCLES_FRONTEND
+	---------------
+	26    IDLE-CYCLES-FRONTEND                               106954770  51        
+	Description: PERF_COUNT_HW_STALLED_CYCLES_FRONTEND
+	---------------
+	27    PERF_COUNT_HW_STALLED_CYCLES_BACKEND               106954771  51        
+	Description: PERF_COUNT_HW_STALLED_CYCLES_BACKEND
+	---------------
+	28    STALLED-CYCLES-BACKEND                             106954772  51        
+	Description: PERF_COUNT_HW_STALLED_CYCLES_BACKEND
+	---------------
+	29    IDLE-CYCLES-BACKEND                                106954773  51        
+	Description: PERF_COUNT_HW_STALLED_CYCLES_BACKEND
+	---------------
+	30    PERF_COUNT_HW_REF_CPU_CYCLES                       106954774  51        
+	Description: PERF_COUNT_HW_REF_CPU_CYCLES
+	---------------
+	31    REF-CYCLES                                         106954775  51        
+	Description: PERF_COUNT_HW_REF_CPU_CYCLES
+	---------------
+	32    PERF_COUNT_SW_CPU_CLOCK                            106954776  51        
+	Description: PERF_COUNT_SW_CPU_CLOCK
+	---------------
+	33    CPU-CLOCK                                          106954777  51        
+	Description: PERF_COUNT_SW_CPU_CLOCK
+	---------------
+	34    PERF_COUNT_SW_TASK_CLOCK                           106954778  51        
+	Description: PERF_COUNT_SW_TASK_CLOCK
+	---------------
+	35    TASK-CLOCK                                         106954779  51        
+	Description: PERF_COUNT_SW_TASK_CLOCK
+	---------------
+	36    PERF_COUNT_SW_PAGE_FAULTS                          106954780  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS
+	---------------
+	37    PAGE-FAULTS                                        106954781  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS
+	---------------
+	38    FAULTS                                             106954782  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS
+	---------------
+	39    PERF_COUNT_SW_CONTEXT_SWITCHES                     106954783  51        
+	Description: PERF_COUNT_SW_CONTEXT_SWITCHES
+	---------------
+	40    CONTEXT-SWITCHES                                   106954784  51        
+	Description: PERF_COUNT_SW_CONTEXT_SWITCHES
+	---------------
+	41    CS                                                 106954785  51        
+	Description: PERF_COUNT_SW_CONTEXT_SWITCHES
+	---------------
+	42    PERF_COUNT_SW_CPU_MIGRATIONS                       106954786  51        
+	Description: PERF_COUNT_SW_CPU_MIGRATIONS
+	---------------
+	43    CPU-MIGRATIONS                                     106954787  51        
+	Description: PERF_COUNT_SW_CPU_MIGRATIONS
+	---------------
+	44    MIGRATIONS                                         106954788  51        
+	Description: PERF_COUNT_SW_CPU_MIGRATIONS
+	---------------
+	45    PERF_COUNT_SW_PAGE_FAULTS_MIN                      106954789  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS_MIN
+	---------------
+	46    MINOR-FAULTS                                       106954790  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS_MIN
+	---------------
+	47    PERF_COUNT_SW_PAGE_FAULTS_MAJ                      106954791  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS_MAJ
+	---------------
+	48    MAJOR-FAULTS                                       106954792  51        
+	Description: PERF_COUNT_SW_PAGE_FAULTS_MAJ
+	---------------
+	49    PERF_COUNT_HW_CACHE_L1D                            106954793  51        
+	Description: L1 data cache
+	---------------
+	50    L1-DCACHE-LOADS                                    106954794  51        
+	Description: L1 cache load accesses
+	---------------
+	51    L1-DCACHE-LOAD-MISSES                              106954795  51        
+	Description: L1 cache load misses
+	---------------
+	52    L1-DCACHE-STORES                                   106954796  51        
+	Description: L1 cache store accesses
+	---------------
+	53    L1-DCACHE-STORE-MISSES                             106954797  51        
+	Description: L1 cache store misses
+	---------------
+	54    L1-DCACHE-PREFETCHES                               106954798  51        
+	Description: L1 cache prefetch accesses
+	---------------
+	55    L1-DCACHE-PREFETCH-MISSES                          106954799  51        
+	Description: L1 cache prefetch misses
+	---------------
+	56    PERF_COUNT_HW_CACHE_L1I                            106954800  51        
+	Description: L1 instruction cache
+	---------------
+	57    L1-ICACHE-LOADS                                    106954801  51        
+	Description: L1I cache load accesses
+	---------------
+	58    L1-ICACHE-LOAD-MISSES                              106954802  51        
+	Description: L1I cache load misses
+	---------------
+	59    L1-ICACHE-PREFETCHES                               106954803  51        
+	Description: L1I cache prefetch accesses
+	---------------
+	60    L1-ICACHE-PREFETCH-MISSES                          106954804  51        
+	Description: L1I cache prefetch misses
+	---------------
+	61    PERF_COUNT_HW_CACHE_LL                             106954805  51        
+	Description: Last level cache
+	---------------
+	62    LLC-LOADS                                          106954806  51        
+	Description: Last level cache load accesses
+	---------------
+	63    LLC-LOAD-MISSES                                    106954807  51        
+	Description: Last level cache load misses
+	---------------
+	64    LLC-STORES                                         106954808  51        
+	Description: Last level cache store accesses
+	---------------
+	65    LLC-STORE-MISSES                                   106954809  51        
+	Description: Last level cache store misses
+	---------------
+	66    LLC-PREFETCHES                                     106954810  51        
+	Description: Last level cache prefetch accesses
+	---------------
+	67    LLC-PREFETCH-MISSES                                106954811  51        
+	Description: Last level cache prefetch misses
+	---------------
+	68    PERF_COUNT_HW_CACHE_DTLB                           106954812  51        
+	Description: Data Translation Lookaside Buffer
+	---------------
+	69    DTLB-LOADS                                         106954813  51        
+	Description: Data TLB load accesses
+	---------------
+	70    DTLB-LOAD-MISSES                                   106954814  51        
+	Description: Data TLB load misses
+	---------------
+	71    DTLB-STORES                                        106954815  51        
+	Description: Data TLB store accesses
+	---------------
+	72    DTLB-STORE-MISSES                                  106954816  51        
+	Description: Data TLB store misses
+	---------------
+	73    DTLB-PREFETCHES                                    106954817  51        
+	Description: Data TLB prefetch accesses
+	---------------
+	74    DTLB-PREFETCH-MISSES                               106954818  51        
+	Description: Data TLB prefetch misses
+	---------------
+	75    PERF_COUNT_HW_CACHE_ITLB                           106954819  51        
+	Description: Instruction Translation Lookaside Buffer
+	---------------
+	76    ITLB-LOADS                                         106954820  51        
+	Description: Instruction TLB load accesses
+	---------------
+	77    ITLB-LOAD-MISSES                                   106954821  51        
+	Description: Instruction TLB load misses
+	---------------
+	78    PERF_COUNT_HW_CACHE_BPU                            106954822  51        
+	Description: Branch Prediction Unit
+	---------------
+	79    BRANCH-LOADS                                       106954823  51        
+	Description: Branch  load accesses
+	---------------
+	80    BRANCH-LOAD-MISSES                                 106954824  51        
+	Description: Branch  load misses
+	---------------
+	81    PERF_COUNT_HW_CACHE_NODE                           106954825  51        
+	Description: Node memory access
+	---------------
+	82    NODE-LOADS                                         106954826  51        
+	Description: Node  load accesses
+	---------------
+	83    NODE-LOAD-MISSES                                   106954827  51        
+	Description: Node  load misses
+	---------------
+	84    NODE-STORES                                        106954828  51        
+	Description: Node  store accesses
+	---------------
+	85    NODE-STORE-MISSES                                  106954829  51        
+	Description: Node  store misses
+	---------------
+	86    NODE-PREFETCHES                                    106954830  51        
+	Description: Node  prefetch accesses
+	---------------
+	87    NODE-PREFETCH-MISSES                               106954831  51        
+	Description: Node  prefetch misses
+	---------------
+	88    RAPL_ENERGY_PKG                                    230686720  110       
+	Description: Number of Joules consumed by all cores and Last level cache on the package. Unit is 2^-32 Joules
+	---------------
+	89    RAPL_ENERGY_DRAM                                   230686721  110       
+	Description: Number of Joules consumed by the DRAM. Unit is 2^-32 Joules
+	---------------
+	90    r0000                                              239075328  114       
+	Description: perf_events raw event syntax: r[0-9a-fA-F]+
+	---------------
+	91    UNHALTED_CORE_CYCLES                               322961408  154       
+	Description: Count core clock cycles whenever the clock signal on the specific core is running (not halted)
+	---------------
+	92    UNHALTED_REFERENCE_CYCLES                          322961409  154       
+	Description: Unhalted reference cycles
+	---------------
+	93    INSTRUCTION_RETIRED                                322961410  154       
+	Description: Number of instructions at retirement
+	---------------
+	94    INSTRUCTIONS_RETIRED                               322961411  154       
+	Description: This is an alias for INSTRUCTION_RETIRED
+	---------------
+	95    BRANCH_INSTRUCTIONS_RETIRED                        322961412  154       
+	Description: Count branch instructions at retirement. Specifically, this event counts the retirement of the last micro-op of a branch instruction
+	---------------
+	96    MISPREDICTED_BRANCH_RETIRED                        322961413  154       
+	Description: Count mispredicted branch instructions at retirement. Specifically, this event counts at retirement of the last micro-op of a branch instruction in the architectural path of the execution and experienced misprediction in the branch prediction hardware
+	---------------
+	97    BACLEARS                                           322961414  154       
+	Description: Branch re-steered
+	---------------
+	98    BR_INST_EXEC                                       322961415  154       
+	Description: Branch instructions executed
+	---------------
+	99    BR_INST_RETIRED                                    322961416  154       
+	Description: Branch instructions retired (Precise Event)
+	---------------
+	100   BR_MISP_EXEC                                       322961417  154       
+	Description: Mispredicted branches executed
+	---------------
+	101   BR_MISP_RETIRED                                    322961418  154       
+	Description: Mispredicted retired branches (Precise Event)
+	---------------
+	102   CPL_CYCLES                                         322961419  154       
+	Description: Unhalted core cycles at a specific ring level
+	---------------
+	103   CPU_CLK_THREAD_UNHALTED                            322961420  154       
+	Description: Count core clock cycles whenever the clock signal on the specific core is running (not halted)
+	---------------
+	104   CPU_CLK_UNHALTED                                   322961421  154       
+	Description: Count core clock cycles whenever the clock signal on the specific core is running (not halted)
+	---------------
+	105   CYCLE_ACTIVITY                                     322961422  154       
+	Description: Stalled cycles
+	---------------
+	106   DTLB_LOAD_MISSES                                   322961423  154       
+	Description: Data TLB load misses
+	---------------
+	107   DTLB_STORE_MISSES                                  322961424  154       
+	Description: Data TLB store misses
+	---------------
+	108   FP_ASSIST                                          322961425  154       
+	Description: X87 floating-point assists
+	---------------
+	109   HLE_RETIRED                                        322961426  154       
+	Description: HLE execution (Precise Event)
+	---------------
+	110   ICACHE                                             322961427  154       
+	Description: Instruction Cache
+	---------------
+	111   IDQ                                                322961428  154       
+	Description: IDQ operations
+	---------------
+	112   IDQ_UOPS_NOT_DELIVERED                             322961429  154       
+	Description: Uops not delivered
+	---------------
+	113   INST_RETIRED                                       322961430  154       
+	Description: Number of instructions retired (Precise Event)
+	---------------
+	114   INT_MISC                                           322961431  154       
+	Description: Miscellaneous interruptions
+	---------------
+	115   ITLB                                               322961432  154       
+	Description: Instruction TLB
+	---------------
+	116   ITLB_MISSES                                        322961433  154       
+	Description: Instruction TLB misses
+	---------------
+	117   L1D                                                322961434  154       
+	Description: L1D cache
+	---------------
+	118   L1D_PEND_MISS                                      322961435  154       
+	Description: L1D pending misses
+	---------------
+	119   L2_DEMAND_RQSTS                                    322961436  154       
+	Description: Demand Data Read requests to L2
+	---------------
+	120   L2_LINES_IN                                        322961437  154       
+	Description: L2 lines allocated
+	---------------
+	121   L2_LINES_OUT                                       322961438  154       
+	Description: L2 lines evicted
+	---------------
+	122   L2_RQSTS                                           322961439  154       
+	Description: L2 requests
+	---------------
+	123   L2_TRANS                                           322961440  154       
+	Description: L2 transactions
+	---------------
+	124   LD_BLOCKS                                          322961441  154       
+	Description: Blocking loads
+	---------------
+	125   LD_BLOCKS_PARTIAL                                  322961442  154       
+	Description: Partial load blocks
+	---------------
+	126   LOAD_HIT_PRE                                       322961443  154       
+	Description: Load dispatches
+	---------------
+	127   LOCK_CYCLES                                        322961444  154       
+	Description: Locked cycles in L1D and L2
+	---------------
+	128   LONGEST_LAT_CACHE                                  322961445  154       
+	Description: L3 cache
+	---------------
+	129   MACHINE_CLEARS                                     322961446  154       
+	Description: Machine clear asserted
+	---------------
+	130   MEM_LOAD_UOPS_L3_HIT_RETIRED                       322961447  154       
+	Description: L3 hit load uops retired (Precise Event)
+	---------------
+	131   MEM_LOAD_UOPS_LLC_HIT_RETIRED                      322961448  154       
+	Description: L3 hit load uops retired (Precise Event)
+	---------------
+	132   MEM_LOAD_UOPS_L3_MISS_RETIRED                      322961449  154       
+	Description: Load uops retired that missed the L3 (Precise Event)
+	---------------
+	133   MEM_LOAD_UOPS_LLC_MISS_RETIRED                     322961450  154       
+	Description: Load uops retired that missed the L3 (Precise Event)
+	---------------
+	134   MEM_LOAD_UOPS_RETIRED                              322961451  154       
+	Description: Retired load uops (Precise Event)
+	---------------
+	135   MEM_TRANS_RETIRED                                  322961452  154       
+	Description: Memory transactions retired (Precise Event)
+	---------------
+	136   MEM_UOPS_RETIRED                                   322961453  154       
+	Description: Memory uops retired (Precise Event)
+	---------------
+	137   MISALIGN_MEM_REF                                   322961454  154       
+	Description: Misaligned memory references
+	---------------
+	138   MOVE_ELIMINATION                                   322961455  154       
+	Description: Move Elimination
+	---------------
+	139   OFFCORE_REQUESTS                                   322961456  154       
+	Description: Demand Data Read requests sent to uncore
+	---------------
+	140   OTHER_ASSISTS                                      322961457  154       
+	Description: Software assist
+	---------------
+	141   RESOURCE_STALLS                                    322961458  154       
+	Description: Cycles Allocation is stalled due to Resource Related reason
+	---------------
+	142   ROB_MISC_EVENTS                                    322961459  154       
+	Description: ROB miscellaneous events
+	---------------
+	143   RS_EVENTS                                          322961460  154       
+	Description: Reservation Station
+	---------------
+	144   RTM_RETIRED                                        322961461  154       
+	Description: Restricted Transaction Memory execution (Precise Event)
+	---------------
+	145   TLB_FLUSH                                          322961462  154       
+	Description: TLB flushes
+	---------------
+	146   UOPS_EXECUTED                                      322961463  154       
+	Description: Uops executed
+	---------------
+	147   LSD                                                322961464  154       
+	Description: Loop stream detector
+	---------------
+	148   UOPS_EXECUTED_PORT                                 322961465  154       
+	Description: Uops dispatched to specific ports
+	---------------
+	149   UOPS_DISPATCHED_PORT                               322961466  154       
+	Description: Uops dispatched to specific ports
+	---------------
+	150   UOPS_ISSUED                                        322961467  154       
+	Description: Uops issued
+	---------------
+	151   UOPS_RETIRED                                       322961468  154       
+	Description: Uops retired (Precise Event)
+	---------------
+	152   TX_MEM                                             322961469  154       
+	Description: Transactional memory aborts
+	---------------
+	153   TX_EXEC                                            322961470  154       
+	Description: Transactional execution
+	---------------
+	154   OFFCORE_REQUESTS_OUTSTANDING                       322961471  154       
+	Description: Outstanding offcore requests
+	---------------
+	155   ILD_STALL                                          322961472  154       
+	Description: Instruction Length Decoder stalls
+	---------------
+	156   PAGE_WALKER_LOADS                                  322961473  154       
+	Description: Page walker loads
+	---------------
+	157   DSB2MITE_SWITCHES                                  322961474  154       
+	Description: Number of DSB to MITE switches
+	---------------
+	158   EPT                                                322961475  154       
+	Description: Extended page table
+	---------------
+	159   ARITH                                              322961476  154       
+	Description: Counts arithmetic multiply operations
+	---------------
+	160   AVX                                                322961477  154       
+	Description: Counts AVX instructions
+	---------------
+	161   SQ_MISC                                            322961478  154       
+	Description: SuperQueue miscellaneous
+	---------------
+	162   OFFCORE_REQUESTS_BUFFER                            322961479  154       
+	Description: Offcore reqest buffer
+	---------------
+	163   OFFCORE_RESPONSE_0                                 322961480  154       
+	Description: Offcore response event (must provide at least one request type and either any_response or any combination of supplier + snoop)
+	---------------
+	164   OFFCORE_RESPONSE_1                                 322961481  154       
+	Description: Offcore response event (must provide at least one request type and either any_response or any combination of supplier + snoop)
+	---------------
+	165   UNC_C_CLOCKTICKS                                   329252864  157       
+	Description: C-box Uncore clockticks
+	---------------
+	166   UNC_C_COUNTER0_OCCUPANCY                           329252865  157       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	167   UNC_C_LLC_LOOKUP                                   329252866  157       
+	Description: Cache lookups
+	---------------
+	168   UNC_C_LLC_VICTIMS                                  329252867  157       
+	Description: Lines victimized
+	---------------
+	169   UNC_C_MISC                                         329252868  157       
+	Description: Miscellaneous C-Box events
+	---------------
+	170   UNC_C_RING_AD_USED                                 329252869  157       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	171   UNC_C_RING_AK_USED                                 329252870  157       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	172   UNC_C_RING_BL_USED                                 329252871  157       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	173   UNC_C_RING_BOUNCES                                 329252872  157       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	174   UNC_C_FAST_ASSERTED                                329252873  157       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	175   UNC_C_BOUNCE_CONTROL                               329252874  157       
+	Description: Bounce control
+	---------------
+	176   UNC_C_RING_IV_USED                                 329252875  157       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	177   UNC_C_RING_SRC_THRTL                               329252876  157       
+	Description: TDB
+	---------------
+	178   UNC_C_RXR_EXT_STARVED                              329252877  157       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	179   UNC_C_RXR_INSERTS                                  329252878  157       
+	Description: Ingress Allocations
+	---------------
+	180   UNC_C_RXR_IPQ_RETRY                                329252879  157       
+	Description: Probe Queue Retries
+	---------------
+	181   UNC_C_RXR_IPQ_RETRY2                               329252880  157       
+	Description: Probe Queue Retries
+	---------------
+	182   UNC_C_RXR_IRQ_RETRY                                329252881  157       
+	Description: Ingress Request Queue Rejects
+	---------------
+	183   UNC_C_RXR_IRQ_RETRY2                               329252882  157       
+	Description: Ingress Request Queue Rejects
+	---------------
+	184   UNC_C_RXR_ISMQ_RETRY                               329252883  157       
+	Description: ISMQ Retries
+	---------------
+	185   UNC_C_RXR_ISMQ_RETRY2                              329252884  157       
+	Description: ISMQ Retries
+	---------------
+	186   UNC_C_RXR_OCCUPANCY                                329252885  157       
+	Description: Ingress Occupancy
+	---------------
+	187   UNC_C_TOR_INSERTS                                  329252886  157       
+	Description: TOR Inserts
+	---------------
+	188   UNC_C_TOR_OCCUPANCY                                329252887  157       
+	Description: TOR Occupancy
+	---------------
+	189   UNC_C_TXR_ADS_USED                                 329252888  157       
+	Description: Egress events
+	---------------
+	190   UNC_C_TXR_INSERTS                                  329252889  157       
+	Description: Egress allocations
+	---------------
+	191   UNC_C_SBO_CREDITS_ACQUIRED                         329252890  157       
+	Description: SBO credits acquired
+	---------------
+	192   UNC_C_SBO_CREDITS_OCCUPANCY                        329252891  157       
+	Description: SBO credits occupancy
+	---------------
+	193   UNC_C_CLOCKTICKS                                   331350016  158       
+	Description: C-box Uncore clockticks
+	---------------
+	194   UNC_C_COUNTER0_OCCUPANCY                           331350017  158       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	195   UNC_C_LLC_LOOKUP                                   331350018  158       
+	Description: Cache lookups
+	---------------
+	196   UNC_C_LLC_VICTIMS                                  331350019  158       
+	Description: Lines victimized
+	---------------
+	197   UNC_C_MISC                                         331350020  158       
+	Description: Miscellaneous C-Box events
+	---------------
+	198   UNC_C_RING_AD_USED                                 331350021  158       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	199   UNC_C_RING_AK_USED                                 331350022  158       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	200   UNC_C_RING_BL_USED                                 331350023  158       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	201   UNC_C_RING_BOUNCES                                 331350024  158       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	202   UNC_C_FAST_ASSERTED                                331350025  158       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	203   UNC_C_BOUNCE_CONTROL                               331350026  158       
+	Description: Bounce control
+	---------------
+	204   UNC_C_RING_IV_USED                                 331350027  158       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	205   UNC_C_RING_SRC_THRTL                               331350028  158       
+	Description: TDB
+	---------------
+	206   UNC_C_RXR_EXT_STARVED                              331350029  158       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	207   UNC_C_RXR_INSERTS                                  331350030  158       
+	Description: Ingress Allocations
+	---------------
+	208   UNC_C_RXR_IPQ_RETRY                                331350031  158       
+	Description: Probe Queue Retries
+	---------------
+	209   UNC_C_RXR_IPQ_RETRY2                               331350032  158       
+	Description: Probe Queue Retries
+	---------------
+	210   UNC_C_RXR_IRQ_RETRY                                331350033  158       
+	Description: Ingress Request Queue Rejects
+	---------------
+	211   UNC_C_RXR_IRQ_RETRY2                               331350034  158       
+	Description: Ingress Request Queue Rejects
+	---------------
+	212   UNC_C_RXR_ISMQ_RETRY                               331350035  158       
+	Description: ISMQ Retries
+	---------------
+	213   UNC_C_RXR_ISMQ_RETRY2                              331350036  158       
+	Description: ISMQ Retries
+	---------------
+	214   UNC_C_RXR_OCCUPANCY                                331350037  158       
+	Description: Ingress Occupancy
+	---------------
+	215   UNC_C_TOR_INSERTS                                  331350038  158       
+	Description: TOR Inserts
+	---------------
+	216   UNC_C_TOR_OCCUPANCY                                331350039  158       
+	Description: TOR Occupancy
+	---------------
+	217   UNC_C_TXR_ADS_USED                                 331350040  158       
+	Description: Egress events
+	---------------
+	218   UNC_C_TXR_INSERTS                                  331350041  158       
+	Description: Egress allocations
+	---------------
+	219   UNC_C_SBO_CREDITS_ACQUIRED                         331350042  158       
+	Description: SBO credits acquired
+	---------------
+	220   UNC_C_SBO_CREDITS_OCCUPANCY                        331350043  158       
+	Description: SBO credits occupancy
+	---------------
+	221   UNC_C_CLOCKTICKS                                   333447168  159       
+	Description: C-box Uncore clockticks
+	---------------
+	222   UNC_C_COUNTER0_OCCUPANCY                           333447169  159       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	223   UNC_C_LLC_LOOKUP                                   333447170  159       
+	Description: Cache lookups
+	---------------
+	224   UNC_C_LLC_VICTIMS                                  333447171  159       
+	Description: Lines victimized
+	---------------
+	225   UNC_C_MISC                                         333447172  159       
+	Description: Miscellaneous C-Box events
+	---------------
+	226   UNC_C_RING_AD_USED                                 333447173  159       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	227   UNC_C_RING_AK_USED                                 333447174  159       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	228   UNC_C_RING_BL_USED                                 333447175  159       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	229   UNC_C_RING_BOUNCES                                 333447176  159       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	230   UNC_C_FAST_ASSERTED                                333447177  159       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	231   UNC_C_BOUNCE_CONTROL                               333447178  159       
+	Description: Bounce control
+	---------------
+	232   UNC_C_RING_IV_USED                                 333447179  159       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	233   UNC_C_RING_SRC_THRTL                               333447180  159       
+	Description: TDB
+	---------------
+	234   UNC_C_RXR_EXT_STARVED                              333447181  159       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	235   UNC_C_RXR_INSERTS                                  333447182  159       
+	Description: Ingress Allocations
+	---------------
+	236   UNC_C_RXR_IPQ_RETRY                                333447183  159       
+	Description: Probe Queue Retries
+	---------------
+	237   UNC_C_RXR_IPQ_RETRY2                               333447184  159       
+	Description: Probe Queue Retries
+	---------------
+	238   UNC_C_RXR_IRQ_RETRY                                333447185  159       
+	Description: Ingress Request Queue Rejects
+	---------------
+	239   UNC_C_RXR_IRQ_RETRY2                               333447186  159       
+	Description: Ingress Request Queue Rejects
+	---------------
+	240   UNC_C_RXR_ISMQ_RETRY                               333447187  159       
+	Description: ISMQ Retries
+	---------------
+	241   UNC_C_RXR_ISMQ_RETRY2                              333447188  159       
+	Description: ISMQ Retries
+	---------------
+	242   UNC_C_RXR_OCCUPANCY                                333447189  159       
+	Description: Ingress Occupancy
+	---------------
+	243   UNC_C_TOR_INSERTS                                  333447190  159       
+	Description: TOR Inserts
+	---------------
+	244   UNC_C_TOR_OCCUPANCY                                333447191  159       
+	Description: TOR Occupancy
+	---------------
+	245   UNC_C_TXR_ADS_USED                                 333447192  159       
+	Description: Egress events
+	---------------
+	246   UNC_C_TXR_INSERTS                                  333447193  159       
+	Description: Egress allocations
+	---------------
+	247   UNC_C_SBO_CREDITS_ACQUIRED                         333447194  159       
+	Description: SBO credits acquired
+	---------------
+	248   UNC_C_SBO_CREDITS_OCCUPANCY                        333447195  159       
+	Description: SBO credits occupancy
+	---------------
+	249   UNC_C_CLOCKTICKS                                   335544320  160       
+	Description: C-box Uncore clockticks
+	---------------
+	250   UNC_C_COUNTER0_OCCUPANCY                           335544321  160       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	251   UNC_C_LLC_LOOKUP                                   335544322  160       
+	Description: Cache lookups
+	---------------
+	252   UNC_C_LLC_VICTIMS                                  335544323  160       
+	Description: Lines victimized
+	---------------
+	253   UNC_C_MISC                                         335544324  160       
+	Description: Miscellaneous C-Box events
+	---------------
+	254   UNC_C_RING_AD_USED                                 335544325  160       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	255   UNC_C_RING_AK_USED                                 335544326  160       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	256   UNC_C_RING_BL_USED                                 335544327  160       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	257   UNC_C_RING_BOUNCES                                 335544328  160       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	258   UNC_C_FAST_ASSERTED                                335544329  160       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	259   UNC_C_BOUNCE_CONTROL                               335544330  160       
+	Description: Bounce control
+	---------------
+	260   UNC_C_RING_IV_USED                                 335544331  160       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	261   UNC_C_RING_SRC_THRTL                               335544332  160       
+	Description: TDB
+	---------------
+	262   UNC_C_RXR_EXT_STARVED                              335544333  160       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	263   UNC_C_RXR_INSERTS                                  335544334  160       
+	Description: Ingress Allocations
+	---------------
+	264   UNC_C_RXR_IPQ_RETRY                                335544335  160       
+	Description: Probe Queue Retries
+	---------------
+	265   UNC_C_RXR_IPQ_RETRY2                               335544336  160       
+	Description: Probe Queue Retries
+	---------------
+	266   UNC_C_RXR_IRQ_RETRY                                335544337  160       
+	Description: Ingress Request Queue Rejects
+	---------------
+	267   UNC_C_RXR_IRQ_RETRY2                               335544338  160       
+	Description: Ingress Request Queue Rejects
+	---------------
+	268   UNC_C_RXR_ISMQ_RETRY                               335544339  160       
+	Description: ISMQ Retries
+	---------------
+	269   UNC_C_RXR_ISMQ_RETRY2                              335544340  160       
+	Description: ISMQ Retries
+	---------------
+	270   UNC_C_RXR_OCCUPANCY                                335544341  160       
+	Description: Ingress Occupancy
+	---------------
+	271   UNC_C_TOR_INSERTS                                  335544342  160       
+	Description: TOR Inserts
+	---------------
+	272   UNC_C_TOR_OCCUPANCY                                335544343  160       
+	Description: TOR Occupancy
+	---------------
+	273   UNC_C_TXR_ADS_USED                                 335544344  160       
+	Description: Egress events
+	---------------
+	274   UNC_C_TXR_INSERTS                                  335544345  160       
+	Description: Egress allocations
+	---------------
+	275   UNC_C_SBO_CREDITS_ACQUIRED                         335544346  160       
+	Description: SBO credits acquired
+	---------------
+	276   UNC_C_SBO_CREDITS_OCCUPANCY                        335544347  160       
+	Description: SBO credits occupancy
+	---------------
+	277   UNC_C_CLOCKTICKS                                   337641472  161       
+	Description: C-box Uncore clockticks
+	---------------
+	278   UNC_C_COUNTER0_OCCUPANCY                           337641473  161       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	279   UNC_C_LLC_LOOKUP                                   337641474  161       
+	Description: Cache lookups
+	---------------
+	280   UNC_C_LLC_VICTIMS                                  337641475  161       
+	Description: Lines victimized
+	---------------
+	281   UNC_C_MISC                                         337641476  161       
+	Description: Miscellaneous C-Box events
+	---------------
+	282   UNC_C_RING_AD_USED                                 337641477  161       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	283   UNC_C_RING_AK_USED                                 337641478  161       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	284   UNC_C_RING_BL_USED                                 337641479  161       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	285   UNC_C_RING_BOUNCES                                 337641480  161       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	286   UNC_C_FAST_ASSERTED                                337641481  161       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	287   UNC_C_BOUNCE_CONTROL                               337641482  161       
+	Description: Bounce control
+	---------------
+	288   UNC_C_RING_IV_USED                                 337641483  161       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	289   UNC_C_RING_SRC_THRTL                               337641484  161       
+	Description: TDB
+	---------------
+	290   UNC_C_RXR_EXT_STARVED                              337641485  161       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	291   UNC_C_RXR_INSERTS                                  337641486  161       
+	Description: Ingress Allocations
+	---------------
+	292   UNC_C_RXR_IPQ_RETRY                                337641487  161       
+	Description: Probe Queue Retries
+	---------------
+	293   UNC_C_RXR_IPQ_RETRY2                               337641488  161       
+	Description: Probe Queue Retries
+	---------------
+	294   UNC_C_RXR_IRQ_RETRY                                337641489  161       
+	Description: Ingress Request Queue Rejects
+	---------------
+	295   UNC_C_RXR_IRQ_RETRY2                               337641490  161       
+	Description: Ingress Request Queue Rejects
+	---------------
+	296   UNC_C_RXR_ISMQ_RETRY                               337641491  161       
+	Description: ISMQ Retries
+	---------------
+	297   UNC_C_RXR_ISMQ_RETRY2                              337641492  161       
+	Description: ISMQ Retries
+	---------------
+	298   UNC_C_RXR_OCCUPANCY                                337641493  161       
+	Description: Ingress Occupancy
+	---------------
+	299   UNC_C_TOR_INSERTS                                  337641494  161       
+	Description: TOR Inserts
+	---------------
+	300   UNC_C_TOR_OCCUPANCY                                337641495  161       
+	Description: TOR Occupancy
+	---------------
+	301   UNC_C_TXR_ADS_USED                                 337641496  161       
+	Description: Egress events
+	---------------
+	302   UNC_C_TXR_INSERTS                                  337641497  161       
+	Description: Egress allocations
+	---------------
+	303   UNC_C_SBO_CREDITS_ACQUIRED                         337641498  161       
+	Description: SBO credits acquired
+	---------------
+	304   UNC_C_SBO_CREDITS_OCCUPANCY                        337641499  161       
+	Description: SBO credits occupancy
+	---------------
+	305   UNC_C_CLOCKTICKS                                   339738624  162       
+	Description: C-box Uncore clockticks
+	---------------
+	306   UNC_C_COUNTER0_OCCUPANCY                           339738625  162       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	307   UNC_C_LLC_LOOKUP                                   339738626  162       
+	Description: Cache lookups
+	---------------
+	308   UNC_C_LLC_VICTIMS                                  339738627  162       
+	Description: Lines victimized
+	---------------
+	309   UNC_C_MISC                                         339738628  162       
+	Description: Miscellaneous C-Box events
+	---------------
+	310   UNC_C_RING_AD_USED                                 339738629  162       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	311   UNC_C_RING_AK_USED                                 339738630  162       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	312   UNC_C_RING_BL_USED                                 339738631  162       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	313   UNC_C_RING_BOUNCES                                 339738632  162       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	314   UNC_C_FAST_ASSERTED                                339738633  162       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	315   UNC_C_BOUNCE_CONTROL                               339738634  162       
+	Description: Bounce control
+	---------------
+	316   UNC_C_RING_IV_USED                                 339738635  162       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	317   UNC_C_RING_SRC_THRTL                               339738636  162       
+	Description: TDB
+	---------------
+	318   UNC_C_RXR_EXT_STARVED                              339738637  162       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	319   UNC_C_RXR_INSERTS                                  339738638  162       
+	Description: Ingress Allocations
+	---------------
+	320   UNC_C_RXR_IPQ_RETRY                                339738639  162       
+	Description: Probe Queue Retries
+	---------------
+	321   UNC_C_RXR_IPQ_RETRY2                               339738640  162       
+	Description: Probe Queue Retries
+	---------------
+	322   UNC_C_RXR_IRQ_RETRY                                339738641  162       
+	Description: Ingress Request Queue Rejects
+	---------------
+	323   UNC_C_RXR_IRQ_RETRY2                               339738642  162       
+	Description: Ingress Request Queue Rejects
+	---------------
+	324   UNC_C_RXR_ISMQ_RETRY                               339738643  162       
+	Description: ISMQ Retries
+	---------------
+	325   UNC_C_RXR_ISMQ_RETRY2                              339738644  162       
+	Description: ISMQ Retries
+	---------------
+	326   UNC_C_RXR_OCCUPANCY                                339738645  162       
+	Description: Ingress Occupancy
+	---------------
+	327   UNC_C_TOR_INSERTS                                  339738646  162       
+	Description: TOR Inserts
+	---------------
+	328   UNC_C_TOR_OCCUPANCY                                339738647  162       
+	Description: TOR Occupancy
+	---------------
+	329   UNC_C_TXR_ADS_USED                                 339738648  162       
+	Description: Egress events
+	---------------
+	330   UNC_C_TXR_INSERTS                                  339738649  162       
+	Description: Egress allocations
+	---------------
+	331   UNC_C_SBO_CREDITS_ACQUIRED                         339738650  162       
+	Description: SBO credits acquired
+	---------------
+	332   UNC_C_SBO_CREDITS_OCCUPANCY                        339738651  162       
+	Description: SBO credits occupancy
+	---------------
+	333   UNC_C_CLOCKTICKS                                   341835776  163       
+	Description: C-box Uncore clockticks
+	---------------
+	334   UNC_C_COUNTER0_OCCUPANCY                           341835777  163       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	335   UNC_C_LLC_LOOKUP                                   341835778  163       
+	Description: Cache lookups
+	---------------
+	336   UNC_C_LLC_VICTIMS                                  341835779  163       
+	Description: Lines victimized
+	---------------
+	337   UNC_C_MISC                                         341835780  163       
+	Description: Miscellaneous C-Box events
+	---------------
+	338   UNC_C_RING_AD_USED                                 341835781  163       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	339   UNC_C_RING_AK_USED                                 341835782  163       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	340   UNC_C_RING_BL_USED                                 341835783  163       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	341   UNC_C_RING_BOUNCES                                 341835784  163       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	342   UNC_C_FAST_ASSERTED                                341835785  163       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	343   UNC_C_BOUNCE_CONTROL                               341835786  163       
+	Description: Bounce control
+	---------------
+	344   UNC_C_RING_IV_USED                                 341835787  163       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	345   UNC_C_RING_SRC_THRTL                               341835788  163       
+	Description: TDB
+	---------------
+	346   UNC_C_RXR_EXT_STARVED                              341835789  163       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	347   UNC_C_RXR_INSERTS                                  341835790  163       
+	Description: Ingress Allocations
+	---------------
+	348   UNC_C_RXR_IPQ_RETRY                                341835791  163       
+	Description: Probe Queue Retries
+	---------------
+	349   UNC_C_RXR_IPQ_RETRY2                               341835792  163       
+	Description: Probe Queue Retries
+	---------------
+	350   UNC_C_RXR_IRQ_RETRY                                341835793  163       
+	Description: Ingress Request Queue Rejects
+	---------------
+	351   UNC_C_RXR_IRQ_RETRY2                               341835794  163       
+	Description: Ingress Request Queue Rejects
+	---------------
+	352   UNC_C_RXR_ISMQ_RETRY                               341835795  163       
+	Description: ISMQ Retries
+	---------------
+	353   UNC_C_RXR_ISMQ_RETRY2                              341835796  163       
+	Description: ISMQ Retries
+	---------------
+	354   UNC_C_RXR_OCCUPANCY                                341835797  163       
+	Description: Ingress Occupancy
+	---------------
+	355   UNC_C_TOR_INSERTS                                  341835798  163       
+	Description: TOR Inserts
+	---------------
+	356   UNC_C_TOR_OCCUPANCY                                341835799  163       
+	Description: TOR Occupancy
+	---------------
+	357   UNC_C_TXR_ADS_USED                                 341835800  163       
+	Description: Egress events
+	---------------
+	358   UNC_C_TXR_INSERTS                                  341835801  163       
+	Description: Egress allocations
+	---------------
+	359   UNC_C_SBO_CREDITS_ACQUIRED                         341835802  163       
+	Description: SBO credits acquired
+	---------------
+	360   UNC_C_SBO_CREDITS_OCCUPANCY                        341835803  163       
+	Description: SBO credits occupancy
+	---------------
+	361   UNC_C_CLOCKTICKS                                   343932928  164       
+	Description: C-box Uncore clockticks
+	---------------
+	362   UNC_C_COUNTER0_OCCUPANCY                           343932929  164       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	363   UNC_C_LLC_LOOKUP                                   343932930  164       
+	Description: Cache lookups
+	---------------
+	364   UNC_C_LLC_VICTIMS                                  343932931  164       
+	Description: Lines victimized
+	---------------
+	365   UNC_C_MISC                                         343932932  164       
+	Description: Miscellaneous C-Box events
+	---------------
+	366   UNC_C_RING_AD_USED                                 343932933  164       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	367   UNC_C_RING_AK_USED                                 343932934  164       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	368   UNC_C_RING_BL_USED                                 343932935  164       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	369   UNC_C_RING_BOUNCES                                 343932936  164       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	370   UNC_C_FAST_ASSERTED                                343932937  164       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	371   UNC_C_BOUNCE_CONTROL                               343932938  164       
+	Description: Bounce control
+	---------------
+	372   UNC_C_RING_IV_USED                                 343932939  164       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	373   UNC_C_RING_SRC_THRTL                               343932940  164       
+	Description: TDB
+	---------------
+	374   UNC_C_RXR_EXT_STARVED                              343932941  164       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	375   UNC_C_RXR_INSERTS                                  343932942  164       
+	Description: Ingress Allocations
+	---------------
+	376   UNC_C_RXR_IPQ_RETRY                                343932943  164       
+	Description: Probe Queue Retries
+	---------------
+	377   UNC_C_RXR_IPQ_RETRY2                               343932944  164       
+	Description: Probe Queue Retries
+	---------------
+	378   UNC_C_RXR_IRQ_RETRY                                343932945  164       
+	Description: Ingress Request Queue Rejects
+	---------------
+	379   UNC_C_RXR_IRQ_RETRY2                               343932946  164       
+	Description: Ingress Request Queue Rejects
+	---------------
+	380   UNC_C_RXR_ISMQ_RETRY                               343932947  164       
+	Description: ISMQ Retries
+	---------------
+	381   UNC_C_RXR_ISMQ_RETRY2                              343932948  164       
+	Description: ISMQ Retries
+	---------------
+	382   UNC_C_RXR_OCCUPANCY                                343932949  164       
+	Description: Ingress Occupancy
+	---------------
+	383   UNC_C_TOR_INSERTS                                  343932950  164       
+	Description: TOR Inserts
+	---------------
+	384   UNC_C_TOR_OCCUPANCY                                343932951  164       
+	Description: TOR Occupancy
+	---------------
+	385   UNC_C_TXR_ADS_USED                                 343932952  164       
+	Description: Egress events
+	---------------
+	386   UNC_C_TXR_INSERTS                                  343932953  164       
+	Description: Egress allocations
+	---------------
+	387   UNC_C_SBO_CREDITS_ACQUIRED                         343932954  164       
+	Description: SBO credits acquired
+	---------------
+	388   UNC_C_SBO_CREDITS_OCCUPANCY                        343932955  164       
+	Description: SBO credits occupancy
+	---------------
+	389   UNC_C_CLOCKTICKS                                   346030080  165       
+	Description: C-box Uncore clockticks
+	---------------
+	390   UNC_C_COUNTER0_OCCUPANCY                           346030081  165       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	391   UNC_C_LLC_LOOKUP                                   346030082  165       
+	Description: Cache lookups
+	---------------
+	392   UNC_C_LLC_VICTIMS                                  346030083  165       
+	Description: Lines victimized
+	---------------
+	393   UNC_C_MISC                                         346030084  165       
+	Description: Miscellaneous C-Box events
+	---------------
+	394   UNC_C_RING_AD_USED                                 346030085  165       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	395   UNC_C_RING_AK_USED                                 346030086  165       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	396   UNC_C_RING_BL_USED                                 346030087  165       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	397   UNC_C_RING_BOUNCES                                 346030088  165       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	398   UNC_C_FAST_ASSERTED                                346030089  165       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	399   UNC_C_BOUNCE_CONTROL                               346030090  165       
+	Description: Bounce control
+	---------------
+	400   UNC_C_RING_IV_USED                                 346030091  165       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	401   UNC_C_RING_SRC_THRTL                               346030092  165       
+	Description: TDB
+	---------------
+	402   UNC_C_RXR_EXT_STARVED                              346030093  165       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	403   UNC_C_RXR_INSERTS                                  346030094  165       
+	Description: Ingress Allocations
+	---------------
+	404   UNC_C_RXR_IPQ_RETRY                                346030095  165       
+	Description: Probe Queue Retries
+	---------------
+	405   UNC_C_RXR_IPQ_RETRY2                               346030096  165       
+	Description: Probe Queue Retries
+	---------------
+	406   UNC_C_RXR_IRQ_RETRY                                346030097  165       
+	Description: Ingress Request Queue Rejects
+	---------------
+	407   UNC_C_RXR_IRQ_RETRY2                               346030098  165       
+	Description: Ingress Request Queue Rejects
+	---------------
+	408   UNC_C_RXR_ISMQ_RETRY                               346030099  165       
+	Description: ISMQ Retries
+	---------------
+	409   UNC_C_RXR_ISMQ_RETRY2                              346030100  165       
+	Description: ISMQ Retries
+	---------------
+	410   UNC_C_RXR_OCCUPANCY                                346030101  165       
+	Description: Ingress Occupancy
+	---------------
+	411   UNC_C_TOR_INSERTS                                  346030102  165       
+	Description: TOR Inserts
+	---------------
+	412   UNC_C_TOR_OCCUPANCY                                346030103  165       
+	Description: TOR Occupancy
+	---------------
+	413   UNC_C_TXR_ADS_USED                                 346030104  165       
+	Description: Egress events
+	---------------
+	414   UNC_C_TXR_INSERTS                                  346030105  165       
+	Description: Egress allocations
+	---------------
+	415   UNC_C_SBO_CREDITS_ACQUIRED                         346030106  165       
+	Description: SBO credits acquired
+	---------------
+	416   UNC_C_SBO_CREDITS_OCCUPANCY                        346030107  165       
+	Description: SBO credits occupancy
+	---------------
+	417   UNC_C_CLOCKTICKS                                   348127232  166       
+	Description: C-box Uncore clockticks
+	---------------
+	418   UNC_C_COUNTER0_OCCUPANCY                           348127233  166       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	419   UNC_C_LLC_LOOKUP                                   348127234  166       
+	Description: Cache lookups
+	---------------
+	420   UNC_C_LLC_VICTIMS                                  348127235  166       
+	Description: Lines victimized
+	---------------
+	421   UNC_C_MISC                                         348127236  166       
+	Description: Miscellaneous C-Box events
+	---------------
+	422   UNC_C_RING_AD_USED                                 348127237  166       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	423   UNC_C_RING_AK_USED                                 348127238  166       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	424   UNC_C_RING_BL_USED                                 348127239  166       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	425   UNC_C_RING_BOUNCES                                 348127240  166       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	426   UNC_C_FAST_ASSERTED                                348127241  166       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	427   UNC_C_BOUNCE_CONTROL                               348127242  166       
+	Description: Bounce control
+	---------------
+	428   UNC_C_RING_IV_USED                                 348127243  166       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	429   UNC_C_RING_SRC_THRTL                               348127244  166       
+	Description: TDB
+	---------------
+	430   UNC_C_RXR_EXT_STARVED                              348127245  166       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	431   UNC_C_RXR_INSERTS                                  348127246  166       
+	Description: Ingress Allocations
+	---------------
+	432   UNC_C_RXR_IPQ_RETRY                                348127247  166       
+	Description: Probe Queue Retries
+	---------------
+	433   UNC_C_RXR_IPQ_RETRY2                               348127248  166       
+	Description: Probe Queue Retries
+	---------------
+	434   UNC_C_RXR_IRQ_RETRY                                348127249  166       
+	Description: Ingress Request Queue Rejects
+	---------------
+	435   UNC_C_RXR_IRQ_RETRY2                               348127250  166       
+	Description: Ingress Request Queue Rejects
+	---------------
+	436   UNC_C_RXR_ISMQ_RETRY                               348127251  166       
+	Description: ISMQ Retries
+	---------------
+	437   UNC_C_RXR_ISMQ_RETRY2                              348127252  166       
+	Description: ISMQ Retries
+	---------------
+	438   UNC_C_RXR_OCCUPANCY                                348127253  166       
+	Description: Ingress Occupancy
+	---------------
+	439   UNC_C_TOR_INSERTS                                  348127254  166       
+	Description: TOR Inserts
+	---------------
+	440   UNC_C_TOR_OCCUPANCY                                348127255  166       
+	Description: TOR Occupancy
+	---------------
+	441   UNC_C_TXR_ADS_USED                                 348127256  166       
+	Description: Egress events
+	---------------
+	442   UNC_C_TXR_INSERTS                                  348127257  166       
+	Description: Egress allocations
+	---------------
+	443   UNC_C_SBO_CREDITS_ACQUIRED                         348127258  166       
+	Description: SBO credits acquired
+	---------------
+	444   UNC_C_SBO_CREDITS_OCCUPANCY                        348127259  166       
+	Description: SBO credits occupancy
+	---------------
+	445   UNC_C_CLOCKTICKS                                   350224384  167       
+	Description: C-box Uncore clockticks
+	---------------
+	446   UNC_C_COUNTER0_OCCUPANCY                           350224385  167       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	447   UNC_C_LLC_LOOKUP                                   350224386  167       
+	Description: Cache lookups
+	---------------
+	448   UNC_C_LLC_VICTIMS                                  350224387  167       
+	Description: Lines victimized
+	---------------
+	449   UNC_C_MISC                                         350224388  167       
+	Description: Miscellaneous C-Box events
+	---------------
+	450   UNC_C_RING_AD_USED                                 350224389  167       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	451   UNC_C_RING_AK_USED                                 350224390  167       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	452   UNC_C_RING_BL_USED                                 350224391  167       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	453   UNC_C_RING_BOUNCES                                 350224392  167       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	454   UNC_C_FAST_ASSERTED                                350224393  167       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	455   UNC_C_BOUNCE_CONTROL                               350224394  167       
+	Description: Bounce control
+	---------------
+	456   UNC_C_RING_IV_USED                                 350224395  167       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	457   UNC_C_RING_SRC_THRTL                               350224396  167       
+	Description: TDB
+	---------------
+	458   UNC_C_RXR_EXT_STARVED                              350224397  167       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	459   UNC_C_RXR_INSERTS                                  350224398  167       
+	Description: Ingress Allocations
+	---------------
+	460   UNC_C_RXR_IPQ_RETRY                                350224399  167       
+	Description: Probe Queue Retries
+	---------------
+	461   UNC_C_RXR_IPQ_RETRY2                               350224400  167       
+	Description: Probe Queue Retries
+	---------------
+	462   UNC_C_RXR_IRQ_RETRY                                350224401  167       
+	Description: Ingress Request Queue Rejects
+	---------------
+	463   UNC_C_RXR_IRQ_RETRY2                               350224402  167       
+	Description: Ingress Request Queue Rejects
+	---------------
+	464   UNC_C_RXR_ISMQ_RETRY                               350224403  167       
+	Description: ISMQ Retries
+	---------------
+	465   UNC_C_RXR_ISMQ_RETRY2                              350224404  167       
+	Description: ISMQ Retries
+	---------------
+	466   UNC_C_RXR_OCCUPANCY                                350224405  167       
+	Description: Ingress Occupancy
+	---------------
+	467   UNC_C_TOR_INSERTS                                  350224406  167       
+	Description: TOR Inserts
+	---------------
+	468   UNC_C_TOR_OCCUPANCY                                350224407  167       
+	Description: TOR Occupancy
+	---------------
+	469   UNC_C_TXR_ADS_USED                                 350224408  167       
+	Description: Egress events
+	---------------
+	470   UNC_C_TXR_INSERTS                                  350224409  167       
+	Description: Egress allocations
+	---------------
+	471   UNC_C_SBO_CREDITS_ACQUIRED                         350224410  167       
+	Description: SBO credits acquired
+	---------------
+	472   UNC_C_SBO_CREDITS_OCCUPANCY                        350224411  167       
+	Description: SBO credits occupancy
+	---------------
+	473   UNC_C_CLOCKTICKS                                   352321536  168       
+	Description: C-box Uncore clockticks
+	---------------
+	474   UNC_C_COUNTER0_OCCUPANCY                           352321537  168       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	475   UNC_C_LLC_LOOKUP                                   352321538  168       
+	Description: Cache lookups
+	---------------
+	476   UNC_C_LLC_VICTIMS                                  352321539  168       
+	Description: Lines victimized
+	---------------
+	477   UNC_C_MISC                                         352321540  168       
+	Description: Miscellaneous C-Box events
+	---------------
+	478   UNC_C_RING_AD_USED                                 352321541  168       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	479   UNC_C_RING_AK_USED                                 352321542  168       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	480   UNC_C_RING_BL_USED                                 352321543  168       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	481   UNC_C_RING_BOUNCES                                 352321544  168       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	482   UNC_C_FAST_ASSERTED                                352321545  168       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	483   UNC_C_BOUNCE_CONTROL                               352321546  168       
+	Description: Bounce control
+	---------------
+	484   UNC_C_RING_IV_USED                                 352321547  168       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	485   UNC_C_RING_SRC_THRTL                               352321548  168       
+	Description: TDB
+	---------------
+	486   UNC_C_RXR_EXT_STARVED                              352321549  168       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	487   UNC_C_RXR_INSERTS                                  352321550  168       
+	Description: Ingress Allocations
+	---------------
+	488   UNC_C_RXR_IPQ_RETRY                                352321551  168       
+	Description: Probe Queue Retries
+	---------------
+	489   UNC_C_RXR_IPQ_RETRY2                               352321552  168       
+	Description: Probe Queue Retries
+	---------------
+	490   UNC_C_RXR_IRQ_RETRY                                352321553  168       
+	Description: Ingress Request Queue Rejects
+	---------------
+	491   UNC_C_RXR_IRQ_RETRY2                               352321554  168       
+	Description: Ingress Request Queue Rejects
+	---------------
+	492   UNC_C_RXR_ISMQ_RETRY                               352321555  168       
+	Description: ISMQ Retries
+	---------------
+	493   UNC_C_RXR_ISMQ_RETRY2                              352321556  168       
+	Description: ISMQ Retries
+	---------------
+	494   UNC_C_RXR_OCCUPANCY                                352321557  168       
+	Description: Ingress Occupancy
+	---------------
+	495   UNC_C_TOR_INSERTS                                  352321558  168       
+	Description: TOR Inserts
+	---------------
+	496   UNC_C_TOR_OCCUPANCY                                352321559  168       
+	Description: TOR Occupancy
+	---------------
+	497   UNC_C_TXR_ADS_USED                                 352321560  168       
+	Description: Egress events
+	---------------
+	498   UNC_C_TXR_INSERTS                                  352321561  168       
+	Description: Egress allocations
+	---------------
+	499   UNC_C_SBO_CREDITS_ACQUIRED                         352321562  168       
+	Description: SBO credits acquired
+	---------------
+	500   UNC_C_SBO_CREDITS_OCCUPANCY                        352321563  168       
+	Description: SBO credits occupancy
+	---------------
+	501   UNC_C_CLOCKTICKS                                   354418688  169       
+	Description: C-box Uncore clockticks
+	---------------
+	502   UNC_C_COUNTER0_OCCUPANCY                           354418689  169       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	503   UNC_C_LLC_LOOKUP                                   354418690  169       
+	Description: Cache lookups
+	---------------
+	504   UNC_C_LLC_VICTIMS                                  354418691  169       
+	Description: Lines victimized
+	---------------
+	505   UNC_C_MISC                                         354418692  169       
+	Description: Miscellaneous C-Box events
+	---------------
+	506   UNC_C_RING_AD_USED                                 354418693  169       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	507   UNC_C_RING_AK_USED                                 354418694  169       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	508   UNC_C_RING_BL_USED                                 354418695  169       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	509   UNC_C_RING_BOUNCES                                 354418696  169       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	510   UNC_C_FAST_ASSERTED                                354418697  169       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	511   UNC_C_BOUNCE_CONTROL                               354418698  169       
+	Description: Bounce control
+	---------------
+	512   UNC_C_RING_IV_USED                                 354418699  169       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	513   UNC_C_RING_SRC_THRTL                               354418700  169       
+	Description: TDB
+	---------------
+	514   UNC_C_RXR_EXT_STARVED                              354418701  169       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	515   UNC_C_RXR_INSERTS                                  354418702  169       
+	Description: Ingress Allocations
+	---------------
+	516   UNC_C_RXR_IPQ_RETRY                                354418703  169       
+	Description: Probe Queue Retries
+	---------------
+	517   UNC_C_RXR_IPQ_RETRY2                               354418704  169       
+	Description: Probe Queue Retries
+	---------------
+	518   UNC_C_RXR_IRQ_RETRY                                354418705  169       
+	Description: Ingress Request Queue Rejects
+	---------------
+	519   UNC_C_RXR_IRQ_RETRY2                               354418706  169       
+	Description: Ingress Request Queue Rejects
+	---------------
+	520   UNC_C_RXR_ISMQ_RETRY                               354418707  169       
+	Description: ISMQ Retries
+	---------------
+	521   UNC_C_RXR_ISMQ_RETRY2                              354418708  169       
+	Description: ISMQ Retries
+	---------------
+	522   UNC_C_RXR_OCCUPANCY                                354418709  169       
+	Description: Ingress Occupancy
+	---------------
+	523   UNC_C_TOR_INSERTS                                  354418710  169       
+	Description: TOR Inserts
+	---------------
+	524   UNC_C_TOR_OCCUPANCY                                354418711  169       
+	Description: TOR Occupancy
+	---------------
+	525   UNC_C_TXR_ADS_USED                                 354418712  169       
+	Description: Egress events
+	---------------
+	526   UNC_C_TXR_INSERTS                                  354418713  169       
+	Description: Egress allocations
+	---------------
+	527   UNC_C_SBO_CREDITS_ACQUIRED                         354418714  169       
+	Description: SBO credits acquired
+	---------------
+	528   UNC_C_SBO_CREDITS_OCCUPANCY                        354418715  169       
+	Description: SBO credits occupancy
+	---------------
+	529   UNC_C_CLOCKTICKS                                   356515840  170       
+	Description: C-box Uncore clockticks
+	---------------
+	530   UNC_C_COUNTER0_OCCUPANCY                           356515841  170       
+	Description: Counter 0 occupancy. Counts the occupancy related information by filtering CB0 occupancy count captured in counter 0.
+	---------------
+	531   UNC_C_LLC_LOOKUP                                   356515842  170       
+	Description: Cache lookups
+	---------------
+	532   UNC_C_LLC_VICTIMS                                  356515843  170       
+	Description: Lines victimized
+	---------------
+	533   UNC_C_MISC                                         356515844  170       
+	Description: Miscellaneous C-Box events
+	---------------
+	534   UNC_C_RING_AD_USED                                 356515845  170       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	535   UNC_C_RING_AK_USED                                 356515846  170       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	536   UNC_C_RING_BL_USED                                 356515847  170       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	537   UNC_C_RING_BOUNCES                                 356515848  170       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	538   UNC_C_FAST_ASSERTED                                356515849  170       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	539   UNC_C_BOUNCE_CONTROL                               356515850  170       
+	Description: Bounce control
+	---------------
+	540   UNC_C_RING_IV_USED                                 356515851  170       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	541   UNC_C_RING_SRC_THRTL                               356515852  170       
+	Description: TDB
+	---------------
+	542   UNC_C_RXR_EXT_STARVED                              356515853  170       
+	Description: Ingress arbiter blocking cycles
+	---------------
+	543   UNC_C_RXR_INSERTS                                  356515854  170       
+	Description: Ingress Allocations
+	---------------
+	544   UNC_C_RXR_IPQ_RETRY                                356515855  170       
+	Description: Probe Queue Retries
+	---------------
+	545   UNC_C_RXR_IPQ_RETRY2                               356515856  170       
+	Description: Probe Queue Retries
+	---------------
+	546   UNC_C_RXR_IRQ_RETRY                                356515857  170       
+	Description: Ingress Request Queue Rejects
+	---------------
+	547   UNC_C_RXR_IRQ_RETRY2                               356515858  170       
+	Description: Ingress Request Queue Rejects
+	---------------
+	548   UNC_C_RXR_ISMQ_RETRY                               356515859  170       
+	Description: ISMQ Retries
+	---------------
+	549   UNC_C_RXR_ISMQ_RETRY2                              356515860  170       
+	Description: ISMQ Retries
+	---------------
+	550   UNC_C_RXR_OCCUPANCY                                356515861  170       
+	Description: Ingress Occupancy
+	---------------
+	551   UNC_C_TOR_INSERTS                                  356515862  170       
+	Description: TOR Inserts
+	---------------
+	552   UNC_C_TOR_OCCUPANCY                                356515863  170       
+	Description: TOR Occupancy
+	---------------
+	553   UNC_C_TXR_ADS_USED                                 356515864  170       
+	Description: Egress events
+	---------------
+	554   UNC_C_TXR_INSERTS                                  356515865  170       
+	Description: Egress allocations
+	---------------
+	555   UNC_C_SBO_CREDITS_ACQUIRED                         356515866  170       
+	Description: SBO credits acquired
+	---------------
+	556   UNC_C_SBO_CREDITS_OCCUPANCY                        356515867  170       
+	Description: SBO credits occupancy
+	---------------
+	557   UNC_H_CLOCKTICKS                                   367001600  175       
+	Description: HA Uncore clockticks
+	---------------
+	558   UNC_H_CONFLICT_CYCLES                              367001601  175       
+	Description: Conflict Checks
+	---------------
+	559   UNC_H_DIRECT2CORE_COUNT                            367001602  175       
+	Description: Direct2Core Messages Sent
+	---------------
+	560   UNC_H_DIRECT2CORE_CYCLES_DISABLED                  367001603  175       
+	Description: Cycles when Direct2Core was Disabled
+	---------------
+	561   UNC_H_DIRECT2CORE_TXN_OVERRIDE                     367001604  175       
+	Description: Number of Reads that had Direct2Core Overridden
+	---------------
+	562   UNC_H_DIRECTORY_LOOKUP                             367001605  175       
+	Description: Directory Lookups
+	---------------
+	563   UNC_H_DIRECTORY_UPDATE                             367001606  175       
+	Description: Directory Updates
+	---------------
+	564   UNC_H_IGR_NO_CREDIT_CYCLES                         367001607  175       
+	Description: Cycles without QPI Ingress Credits
+	---------------
+	565   UNC_H_IMC_RETRY                                    367001608  175       
+	Description: Retry Events
+	---------------
+	566   UNC_H_IMC_WRITES                                   367001609  175       
+	Description: HA to IMC Full Line Writes Issued
+	---------------
+	567   UNC_H_IMC_READS                                    367001610  175       
+	Description: HA to IMC normal priority reads issued
+	---------------
+	568   UNC_H_REQUESTS                                     367001611  175       
+	Description: Read and Write Requests
+	---------------
+	569   UNC_H_RPQ_CYCLES_NO_REG_CREDITS                    367001612  175       
+	Description: IMC RPQ Credits Empty
+	---------------
+	570   UNC_H_TAD_REQUESTS_G0                              367001613  175       
+	Description: HA Requests to a TAD Region
+	---------------
+	571   UNC_H_TAD_REQUESTS_G1                              367001614  175       
+	Description: HA Requests to a TAD Region
+	---------------
+	572   UNC_H_TXR_AD_CYCLES_FULL                           367001615  175       
+	Description: AD Egress Full
+	---------------
+	573   UNC_H_TXR_AK_CYCLES_FULL                           367001616  175       
+	Description: AK Egress Full
+	---------------
+	574   UNC_H_TXR_AK                                       367001617  175       
+	Description: Outbound Ring Transactions on AK
+	---------------
+	575   UNC_H_TXR_BL                                       367001618  175       
+	Description: Outbound DRS Ring Transactions to Cache
+	---------------
+	576   UNC_H_TXR_BL_CYCLES_FULL                           367001619  175       
+	Description: BL Egress Full
+	---------------
+	577   UNC_H_WPQ_CYCLES_NO_REG_CREDITS                    367001620  175       
+	Description: HA IMC CHN0 WPQ Credits Empty
+	---------------
+	578   UNC_H_BT_BYPASS                                    367001621  175       
+	Description: Backup Tracker bypass
+	---------------
+	579   UNC_H_BYPASS_IMC                                   367001622  175       
+	Description: HA to IMC bypass
+	---------------
+	580   UNC_H_BT_CYCLES_NE                                 367001623  175       
+	Description: Backup Tracker cycles not empty
+	---------------
+	581   UNC_H_BT_OCCUPANCY                                 367001624  175       
+	Description: Backup Tracker inserts
+	---------------
+	582   UNC_H_OSB                                          367001625  175       
+	Description: OSB snoop broadcast
+	---------------
+	583   UNC_H_OSB_EDR                                      367001626  175       
+	Description: OSB early data return
+	---------------
+	584   UNC_H_RING_AD_USED                                 367001627  175       
+	Description: AD ring in use
+	---------------
+	585   UNC_H_RING_AK_USED                                 367001628  175       
+	Description: AK ring in use
+	---------------
+	586   UNC_H_RING_BL_USED                                 367001629  175       
+	Description: BL ring in use
+	---------------
+	587   UNC_H_DIRECTORY_LAT_OPT                            367001630  175       
+	Description: Directory latency optimization data return path taken
+	---------------
+	588   UNC_H_SNOOP_RESP_RECV_LOCAL                        367001631  175       
+	Description: Snoop responses received local
+	---------------
+	589   UNC_H_SNP_RESP_RECV_LOCAL                          367001632  175       
+	Description: Snoop responses received local
+	---------------
+	590   UNC_H_TXR_BL_OCCUPANCY                             367001633  175       
+	Description: BL Egress occupancy
+	---------------
+	591   UNC_H_SNOOP_RESP                                   367001634  175       
+	Description: Snoop responses received
+	---------------
+	592   UNC_H_HITME_HIT                                    367001635  175       
+	Description: Hits in the HitMe cache
+	---------------
+	593   UNC_H_HITME_HIT_PV_BITS_SET                        367001636  175       
+	Description: Number of PV bits set on HitMe cache hits
+	---------------
+	594   UNC_H_HITME_LOOKUP                                 367001637  175       
+	Description: Number of accesses to HitMe cache
+	---------------
+	595   UNC_H_SBO0_CREDIT_ACQUIRED                         367001638  175       
+	Description: SBO0 credits acquired
+	---------------
+	596   UNC_H_SBO0_CREDIT_OCCUPANCY                        367001639  175       
+	Description: SBO0 credits occupancy
+	---------------
+	597   UNC_H_SBO1_CREDIT_ACQUIRED                         367001640  175       
+	Description: SBO1 credits acquired
+	---------------
+	598   UNC_H_SBO0_CREDIT_OCCUPANCY                        367001641  175       
+	Description: SBO1 credits occupancy
+	---------------
+	599   UNC_H_SNOOPS_RSP_AFTER_DATA                        367001642  175       
+	Description: Number of reads when the snoops was on the critical path to the data return
+	---------------
+	600   UNC_H_SNOOPS_CYCLES_NE                             367001643  175       
+	Description: Number of cycles when one or more snoops are outstanding
+	---------------
+	601   UNC_H_SNOOPS_OCCUPANCY                             367001644  175       
+	Description: Tracker snoops outstanding accumulator
+	---------------
+	602   UNC_H_STALL_NO_SBO_CREDIT                          367001645  175       
+	Description: Stalls on no SBO credits
+	---------------
+	603   UNC_H_TRACKER_CYCLES_NE                            367001646  175       
+	Description: Tracker cycles not empty
+	---------------
+	604   UNC_H_TRACKER_OCCUPANCY                            367001647  175       
+	Description: Tracker occupancy accumulator
+	---------------
+	605   UNC_H_TRACKER_PENDING_OCCUPANCY                    367001648  175       
+	Description: Data pending occupancy accumulator
+	---------------
+	606   UNC_H_TXR_STARVED                                  367001649  175       
+	Description: Injection starvation
+	---------------
+	607   UNC_H_CLOCKTICKS                                   369098752  176       
+	Description: HA Uncore clockticks
+	---------------
+	608   UNC_H_CONFLICT_CYCLES                              369098753  176       
+	Description: Conflict Checks
+	---------------
+	609   UNC_H_DIRECT2CORE_COUNT                            369098754  176       
+	Description: Direct2Core Messages Sent
+	---------------
+	610   UNC_H_DIRECT2CORE_CYCLES_DISABLED                  369098755  176       
+	Description: Cycles when Direct2Core was Disabled
+	---------------
+	611   UNC_H_DIRECT2CORE_TXN_OVERRIDE                     369098756  176       
+	Description: Number of Reads that had Direct2Core Overridden
+	---------------
+	612   UNC_H_DIRECTORY_LOOKUP                             369098757  176       
+	Description: Directory Lookups
+	---------------
+	613   UNC_H_DIRECTORY_UPDATE                             369098758  176       
+	Description: Directory Updates
+	---------------
+	614   UNC_H_IGR_NO_CREDIT_CYCLES                         369098759  176       
+	Description: Cycles without QPI Ingress Credits
+	---------------
+	615   UNC_H_IMC_RETRY                                    369098760  176       
+	Description: Retry Events
+	---------------
+	616   UNC_H_IMC_WRITES                                   369098761  176       
+	Description: HA to IMC Full Line Writes Issued
+	---------------
+	617   UNC_H_IMC_READS                                    369098762  176       
+	Description: HA to IMC normal priority reads issued
+	---------------
+	618   UNC_H_REQUESTS                                     369098763  176       
+	Description: Read and Write Requests
+	---------------
+	619   UNC_H_RPQ_CYCLES_NO_REG_CREDITS                    369098764  176       
+	Description: IMC RPQ Credits Empty
+	---------------
+	620   UNC_H_TAD_REQUESTS_G0                              369098765  176       
+	Description: HA Requests to a TAD Region
+	---------------
+	621   UNC_H_TAD_REQUESTS_G1                              369098766  176       
+	Description: HA Requests to a TAD Region
+	---------------
+	622   UNC_H_TXR_AD_CYCLES_FULL                           369098767  176       
+	Description: AD Egress Full
+	---------------
+	623   UNC_H_TXR_AK_CYCLES_FULL                           369098768  176       
+	Description: AK Egress Full
+	---------------
+	624   UNC_H_TXR_AK                                       369098769  176       
+	Description: Outbound Ring Transactions on AK
+	---------------
+	625   UNC_H_TXR_BL                                       369098770  176       
+	Description: Outbound DRS Ring Transactions to Cache
+	---------------
+	626   UNC_H_TXR_BL_CYCLES_FULL                           369098771  176       
+	Description: BL Egress Full
+	---------------
+	627   UNC_H_WPQ_CYCLES_NO_REG_CREDITS                    369098772  176       
+	Description: HA IMC CHN0 WPQ Credits Empty
+	---------------
+	628   UNC_H_BT_BYPASS                                    369098773  176       
+	Description: Backup Tracker bypass
+	---------------
+	629   UNC_H_BYPASS_IMC                                   369098774  176       
+	Description: HA to IMC bypass
+	---------------
+	630   UNC_H_BT_CYCLES_NE                                 369098775  176       
+	Description: Backup Tracker cycles not empty
+	---------------
+	631   UNC_H_BT_OCCUPANCY                                 369098776  176       
+	Description: Backup Tracker inserts
+	---------------
+	632   UNC_H_OSB                                          369098777  176       
+	Description: OSB snoop broadcast
+	---------------
+	633   UNC_H_OSB_EDR                                      369098778  176       
+	Description: OSB early data return
+	---------------
+	634   UNC_H_RING_AD_USED                                 369098779  176       
+	Description: AD ring in use
+	---------------
+	635   UNC_H_RING_AK_USED                                 369098780  176       
+	Description: AK ring in use
+	---------------
+	636   UNC_H_RING_BL_USED                                 369098781  176       
+	Description: BL ring in use
+	---------------
+	637   UNC_H_DIRECTORY_LAT_OPT                            369098782  176       
+	Description: Directory latency optimization data return path taken
+	---------------
+	638   UNC_H_SNOOP_RESP_RECV_LOCAL                        369098783  176       
+	Description: Snoop responses received local
+	---------------
+	639   UNC_H_SNP_RESP_RECV_LOCAL                          369098784  176       
+	Description: Snoop responses received local
+	---------------
+	640   UNC_H_TXR_BL_OCCUPANCY                             369098785  176       
+	Description: BL Egress occupancy
+	---------------
+	641   UNC_H_SNOOP_RESP                                   369098786  176       
+	Description: Snoop responses received
+	---------------
+	642   UNC_H_HITME_HIT                                    369098787  176       
+	Description: Hits in the HitMe cache
+	---------------
+	643   UNC_H_HITME_HIT_PV_BITS_SET                        369098788  176       
+	Description: Number of PV bits set on HitMe cache hits
+	---------------
+	644   UNC_H_HITME_LOOKUP                                 369098789  176       
+	Description: Number of accesses to HitMe cache
+	---------------
+	645   UNC_H_SBO0_CREDIT_ACQUIRED                         369098790  176       
+	Description: SBO0 credits acquired
+	---------------
+	646   UNC_H_SBO0_CREDIT_OCCUPANCY                        369098791  176       
+	Description: SBO0 credits occupancy
+	---------------
+	647   UNC_H_SBO1_CREDIT_ACQUIRED                         369098792  176       
+	Description: SBO1 credits acquired
+	---------------
+	648   UNC_H_SBO0_CREDIT_OCCUPANCY                        369098793  176       
+	Description: SBO1 credits occupancy
+	---------------
+	649   UNC_H_SNOOPS_RSP_AFTER_DATA                        369098794  176       
+	Description: Number of reads when the snoops was on the critical path to the data return
+	---------------
+	650   UNC_H_SNOOPS_CYCLES_NE                             369098795  176       
+	Description: Number of cycles when one or more snoops are outstanding
+	---------------
+	651   UNC_H_SNOOPS_OCCUPANCY                             369098796  176       
+	Description: Tracker snoops outstanding accumulator
+	---------------
+	652   UNC_H_STALL_NO_SBO_CREDIT                          369098797  176       
+	Description: Stalls on no SBO credits
+	---------------
+	653   UNC_H_TRACKER_CYCLES_NE                            369098798  176       
+	Description: Tracker cycles not empty
+	---------------
+	654   UNC_H_TRACKER_OCCUPANCY                            369098799  176       
+	Description: Tracker occupancy accumulator
+	---------------
+	655   UNC_H_TRACKER_PENDING_OCCUPANCY                    369098800  176       
+	Description: Data pending occupancy accumulator
+	---------------
+	656   UNC_H_TXR_STARVED                                  369098801  176       
+	Description: Injection starvation
+	---------------
+	657   UNC_M_CLOCKTICKS                                   371195904  177       
+	Description: IMC Uncore clockticks (fixed counter)
+	---------------
+	658   UNC_M_DCLOCKTICKS                                  371195905  177       
+	Description: IMC Uncore clockticks (generic counters)
+	---------------
+	659   UNC_M_ACT_COUNT                                    371195906  177       
+	Description: DRAM Activate Count
+	---------------
+	660   UNC_M_CAS_COUNT                                    371195907  177       
+	Description: DRAM RD_CAS and WR_CAS Commands.
+	---------------
+	661   UNC_M_DRAM_PRE_ALL                                 371195908  177       
+	Description: DRAM Precharge All Commands
+	---------------
+	662   UNC_M_DRAM_REFRESH                                 371195909  177       
+	Description: Number of DRAM Refreshes Issued
+	---------------
+	663   UNC_M_ECC_CORRECTABLE_ERRORS                       371195910  177       
+	Description: ECC Correctable Errors
+	---------------
+	664   UNC_M_MAJOR_MODES                                  371195911  177       
+	Description: Cycles in a Major Mode
+	---------------
+	665   UNC_M_POWER_CHANNEL_DLLOFF                         371195912  177       
+	Description: Channel DLLOFF Cycles
+	---------------
+	666   UNC_M_POWER_CHANNEL_PPD                            371195913  177       
+	Description: Channel PPD Cycles
+	---------------
+	667   UNC_M_POWER_CKE_CYCLES                             371195914  177       
+	Description: CKE_ON_CYCLES by Rank
+	---------------
+	668   UNC_M_POWER_CRITICAL_THROTTLE_CYCLES               371195915  177       
+	Description: Critical Throttle Cycles
+	---------------
+	669   UNC_M_POWER_SELF_REFRESH                           371195916  177       
+	Description: Clock-Enabled Self-Refresh
+	---------------
+	670   UNC_M_POWER_THROTTLE_CYCLES                        371195917  177       
+	Description: Throttle Cycles
+	---------------
+	671   UNC_M_POWER_PCU_THROTTLING                         371195918  177       
+	Description: PCU throttling
+	---------------
+	672   UNC_M_PREEMPTION                                   371195919  177       
+	Description: Read Preemption Count
+	---------------
+	673   UNC_M_PRE_COUNT                                    371195920  177       
+	Description: DRAM Precharge commands.
+	---------------
+	674   UNC_M_RPQ_CYCLES_NE                                371195921  177       
+	Description: Read Pending Queue Not Empty
+	---------------
+	675   UNC_M_RPQ_INSERTS                                  371195922  177       
+	Description: Read Pending Queue Allocations
+	---------------
+	676   UNC_M_WPQ_CYCLES_FULL                              371195923  177       
+	Description: Write Pending Queue Full Cycles
+	---------------
+	677   UNC_M_WPQ_CYCLES_NE                                371195924  177       
+	Description: Write Pending Queue Not Empty
+	---------------
+	678   UNC_M_WPQ_READ_HIT                                 371195925  177       
+	Description: Write Pending Queue CAM Match
+	---------------
+	679   UNC_M_WPQ_WRITE_HIT                                371195926  177       
+	Description: Write Pending Queue CAM Match
+	---------------
+	680   UNC_M_BYP_CMDS                                     371195927  177       
+	Description: Bypass command event
+	---------------
+	681   UNC_M_RD_CAS_PRIO                                  371195928  177       
+	Description: Read CAS priority
+	---------------
+	682   UNC_M_RD_CAS_RANK0                                 371195929  177       
+	Description: Read CAS access to Rank 0
+	---------------
+	683   UNC_M_RD_CAS_RANK1                                 371195930  177       
+	Description: Read CAS access to Rank 1
+	---------------
+	684   UNC_M_RD_CAS_RANK2                                 371195931  177       
+	Description: Read CAS access to Rank 2
+	---------------
+	685   UNC_M_RD_CAS_RANK3                                 371195932  177       
+	Description: Read CAS access to Rank 3
+	---------------
+	686   UNC_M_RD_CAS_RANK4                                 371195933  177       
+	Description: Read CAS access to Rank 4
+	---------------
+	687   UNC_M_RD_CAS_RANK5                                 371195934  177       
+	Description: Read CAS access to Rank 5
+	---------------
+	688   UNC_M_RD_CAS_RANK6                                 371195935  177       
+	Description: Read CAS access to Rank 6
+	---------------
+	689   UNC_M_RD_CAS_RANK7                                 371195936  177       
+	Description: Read CAS access to Rank 7
+	---------------
+	690   UNC_M_VMSE_MXB_WR_OCCUPANCY                        371195937  177       
+	Description: VMSE MXB write buffer occupancy
+	---------------
+	691   UNC_M_VMSE_WR_PUSH                                 371195938  177       
+	Description: VMSE WR push issued
+	---------------
+	692   UNC_M_WMM_TO_RMM                                   371195939  177       
+	Description: Transitions from WMM to RMM because of low threshold
+	---------------
+	693   UNC_M_WRONG_MM                                     371195940  177       
+	Description: Not getting the requested major mode
+	---------------
+	694   UNC_M_WR_CAS_RANK0                                 371195941  177       
+	Description: Write CAS access to Rank 0
+	---------------
+	695   UNC_M_WR_CAS_RANK1                                 371195942  177       
+	Description: Write CAS access to Rank 1
+	---------------
+	696   UNC_M_WR_CAS_RANK2                                 371195943  177       
+	Description: Write CAS access to Rank 2
+	---------------
+	697   UNC_M_WR_CAS_RANK3                                 371195944  177       
+	Description: Write CAS access to Rank 3
+	---------------
+	698   UNC_M_WR_CAS_RANK4                                 371195945  177       
+	Description: Write CAS access to Rank 4
+	---------------
+	699   UNC_M_WR_CAS_RANK5                                 371195946  177       
+	Description: Write CAS access to Rank 5
+	---------------
+	700   UNC_M_WR_CAS_RANK6                                 371195947  177       
+	Description: Write CAS access to Rank 6
+	---------------
+	701   UNC_M_WR_CAS_RANK7                                 371195948  177       
+	Description: Write CAS access to Rank 7
+	---------------
+	702   UNC_M_CLOCKTICKS                                   373293056  178       
+	Description: IMC Uncore clockticks (fixed counter)
+	---------------
+	703   UNC_M_DCLOCKTICKS                                  373293057  178       
+	Description: IMC Uncore clockticks (generic counters)
+	---------------
+	704   UNC_M_ACT_COUNT                                    373293058  178       
+	Description: DRAM Activate Count
+	---------------
+	705   UNC_M_CAS_COUNT                                    373293059  178       
+	Description: DRAM RD_CAS and WR_CAS Commands.
+	---------------
+	706   UNC_M_DRAM_PRE_ALL                                 373293060  178       
+	Description: DRAM Precharge All Commands
+	---------------
+	707   UNC_M_DRAM_REFRESH                                 373293061  178       
+	Description: Number of DRAM Refreshes Issued
+	---------------
+	708   UNC_M_ECC_CORRECTABLE_ERRORS                       373293062  178       
+	Description: ECC Correctable Errors
+	---------------
+	709   UNC_M_MAJOR_MODES                                  373293063  178       
+	Description: Cycles in a Major Mode
+	---------------
+	710   UNC_M_POWER_CHANNEL_DLLOFF                         373293064  178       
+	Description: Channel DLLOFF Cycles
+	---------------
+	711   UNC_M_POWER_CHANNEL_PPD                            373293065  178       
+	Description: Channel PPD Cycles
+	---------------
+	712   UNC_M_POWER_CKE_CYCLES                             373293066  178       
+	Description: CKE_ON_CYCLES by Rank
+	---------------
+	713   UNC_M_POWER_CRITICAL_THROTTLE_CYCLES               373293067  178       
+	Description: Critical Throttle Cycles
+	---------------
+	714   UNC_M_POWER_SELF_REFRESH                           373293068  178       
+	Description: Clock-Enabled Self-Refresh
+	---------------
+	715   UNC_M_POWER_THROTTLE_CYCLES                        373293069  178       
+	Description: Throttle Cycles
+	---------------
+	716   UNC_M_POWER_PCU_THROTTLING                         373293070  178       
+	Description: PCU throttling
+	---------------
+	717   UNC_M_PREEMPTION                                   373293071  178       
+	Description: Read Preemption Count
+	---------------
+	718   UNC_M_PRE_COUNT                                    373293072  178       
+	Description: DRAM Precharge commands.
+	---------------
+	719   UNC_M_RPQ_CYCLES_NE                                373293073  178       
+	Description: Read Pending Queue Not Empty
+	---------------
+	720   UNC_M_RPQ_INSERTS                                  373293074  178       
+	Description: Read Pending Queue Allocations
+	---------------
+	721   UNC_M_WPQ_CYCLES_FULL                              373293075  178       
+	Description: Write Pending Queue Full Cycles
+	---------------
+	722   UNC_M_WPQ_CYCLES_NE                                373293076  178       
+	Description: Write Pending Queue Not Empty
+	---------------
+	723   UNC_M_WPQ_READ_HIT                                 373293077  178       
+	Description: Write Pending Queue CAM Match
+	---------------
+	724   UNC_M_WPQ_WRITE_HIT                                373293078  178       
+	Description: Write Pending Queue CAM Match
+	---------------
+	725   UNC_M_BYP_CMDS                                     373293079  178       
+	Description: Bypass command event
+	---------------
+	726   UNC_M_RD_CAS_PRIO                                  373293080  178       
+	Description: Read CAS priority
+	---------------
+	727   UNC_M_RD_CAS_RANK0                                 373293081  178       
+	Description: Read CAS access to Rank 0
+	---------------
+	728   UNC_M_RD_CAS_RANK1                                 373293082  178       
+	Description: Read CAS access to Rank 1
+	---------------
+	729   UNC_M_RD_CAS_RANK2                                 373293083  178       
+	Description: Read CAS access to Rank 2
+	---------------
+	730   UNC_M_RD_CAS_RANK3                                 373293084  178       
+	Description: Read CAS access to Rank 3
+	---------------
+	731   UNC_M_RD_CAS_RANK4                                 373293085  178       
+	Description: Read CAS access to Rank 4
+	---------------
+	732   UNC_M_RD_CAS_RANK5                                 373293086  178       
+	Description: Read CAS access to Rank 5
+	---------------
+	733   UNC_M_RD_CAS_RANK6                                 373293087  178       
+	Description: Read CAS access to Rank 6
+	---------------
+	734   UNC_M_RD_CAS_RANK7                                 373293088  178       
+	Description: Read CAS access to Rank 7
+	---------------
+	735   UNC_M_VMSE_MXB_WR_OCCUPANCY                        373293089  178       
+	Description: VMSE MXB write buffer occupancy
+	---------------
+	736   UNC_M_VMSE_WR_PUSH                                 373293090  178       
+	Description: VMSE WR push issued
+	---------------
+	737   UNC_M_WMM_TO_RMM                                   373293091  178       
+	Description: Transitions from WMM to RMM because of low threshold
+	---------------
+	738   UNC_M_WRONG_MM                                     373293092  178       
+	Description: Not getting the requested major mode
+	---------------
+	739   UNC_M_WR_CAS_RANK0                                 373293093  178       
+	Description: Write CAS access to Rank 0
+	---------------
+	740   UNC_M_WR_CAS_RANK1                                 373293094  178       
+	Description: Write CAS access to Rank 1
+	---------------
+	741   UNC_M_WR_CAS_RANK2                                 373293095  178       
+	Description: Write CAS access to Rank 2
+	---------------
+	742   UNC_M_WR_CAS_RANK3                                 373293096  178       
+	Description: Write CAS access to Rank 3
+	---------------
+	743   UNC_M_WR_CAS_RANK4                                 373293097  178       
+	Description: Write CAS access to Rank 4
+	---------------
+	744   UNC_M_WR_CAS_RANK5                                 373293098  178       
+	Description: Write CAS access to Rank 5
+	---------------
+	745   UNC_M_WR_CAS_RANK6                                 373293099  178       
+	Description: Write CAS access to Rank 6
+	---------------
+	746   UNC_M_WR_CAS_RANK7                                 373293100  178       
+	Description: Write CAS access to Rank 7
+	---------------
+	747   UNC_M_CLOCKTICKS                                   379584512  181       
+	Description: IMC Uncore clockticks (fixed counter)
+	---------------
+	748   UNC_M_DCLOCKTICKS                                  379584513  181       
+	Description: IMC Uncore clockticks (generic counters)
+	---------------
+	749   UNC_M_ACT_COUNT                                    379584514  181       
+	Description: DRAM Activate Count
+	---------------
+	750   UNC_M_CAS_COUNT                                    379584515  181       
+	Description: DRAM RD_CAS and WR_CAS Commands.
+	---------------
+	751   UNC_M_DRAM_PRE_ALL                                 379584516  181       
+	Description: DRAM Precharge All Commands
+	---------------
+	752   UNC_M_DRAM_REFRESH                                 379584517  181       
+	Description: Number of DRAM Refreshes Issued
+	---------------
+	753   UNC_M_ECC_CORRECTABLE_ERRORS                       379584518  181       
+	Description: ECC Correctable Errors
+	---------------
+	754   UNC_M_MAJOR_MODES                                  379584519  181       
+	Description: Cycles in a Major Mode
+	---------------
+	755   UNC_M_POWER_CHANNEL_DLLOFF                         379584520  181       
+	Description: Channel DLLOFF Cycles
+	---------------
+	756   UNC_M_POWER_CHANNEL_PPD                            379584521  181       
+	Description: Channel PPD Cycles
+	---------------
+	757   UNC_M_POWER_CKE_CYCLES                             379584522  181       
+	Description: CKE_ON_CYCLES by Rank
+	---------------
+	758   UNC_M_POWER_CRITICAL_THROTTLE_CYCLES               379584523  181       
+	Description: Critical Throttle Cycles
+	---------------
+	759   UNC_M_POWER_SELF_REFRESH                           379584524  181       
+	Description: Clock-Enabled Self-Refresh
+	---------------
+	760   UNC_M_POWER_THROTTLE_CYCLES                        379584525  181       
+	Description: Throttle Cycles
+	---------------
+	761   UNC_M_POWER_PCU_THROTTLING                         379584526  181       
+	Description: PCU throttling
+	---------------
+	762   UNC_M_PREEMPTION                                   379584527  181       
+	Description: Read Preemption Count
+	---------------
+	763   UNC_M_PRE_COUNT                                    379584528  181       
+	Description: DRAM Precharge commands.
+	---------------
+	764   UNC_M_RPQ_CYCLES_NE                                379584529  181       
+	Description: Read Pending Queue Not Empty
+	---------------
+	765   UNC_M_RPQ_INSERTS                                  379584530  181       
+	Description: Read Pending Queue Allocations
+	---------------
+	766   UNC_M_WPQ_CYCLES_FULL                              379584531  181       
+	Description: Write Pending Queue Full Cycles
+	---------------
+	767   UNC_M_WPQ_CYCLES_NE                                379584532  181       
+	Description: Write Pending Queue Not Empty
+	---------------
+	768   UNC_M_WPQ_READ_HIT                                 379584533  181       
+	Description: Write Pending Queue CAM Match
+	---------------
+	769   UNC_M_WPQ_WRITE_HIT                                379584534  181       
+	Description: Write Pending Queue CAM Match
+	---------------
+	770   UNC_M_BYP_CMDS                                     379584535  181       
+	Description: Bypass command event
+	---------------
+	771   UNC_M_RD_CAS_PRIO                                  379584536  181       
+	Description: Read CAS priority
+	---------------
+	772   UNC_M_RD_CAS_RANK0                                 379584537  181       
+	Description: Read CAS access to Rank 0
+	---------------
+	773   UNC_M_RD_CAS_RANK1                                 379584538  181       
+	Description: Read CAS access to Rank 1
+	---------------
+	774   UNC_M_RD_CAS_RANK2                                 379584539  181       
+	Description: Read CAS access to Rank 2
+	---------------
+	775   UNC_M_RD_CAS_RANK3                                 379584540  181       
+	Description: Read CAS access to Rank 3
+	---------------
+	776   UNC_M_RD_CAS_RANK4                                 379584541  181       
+	Description: Read CAS access to Rank 4
+	---------------
+	777   UNC_M_RD_CAS_RANK5                                 379584542  181       
+	Description: Read CAS access to Rank 5
+	---------------
+	778   UNC_M_RD_CAS_RANK6                                 379584543  181       
+	Description: Read CAS access to Rank 6
+	---------------
+	779   UNC_M_RD_CAS_RANK7                                 379584544  181       
+	Description: Read CAS access to Rank 7
+	---------------
+	780   UNC_M_VMSE_MXB_WR_OCCUPANCY                        379584545  181       
+	Description: VMSE MXB write buffer occupancy
+	---------------
+	781   UNC_M_VMSE_WR_PUSH                                 379584546  181       
+	Description: VMSE WR push issued
+	---------------
+	782   UNC_M_WMM_TO_RMM                                   379584547  181       
+	Description: Transitions from WMM to RMM because of low threshold
+	---------------
+	783   UNC_M_WRONG_MM                                     379584548  181       
+	Description: Not getting the requested major mode
+	---------------
+	784   UNC_M_WR_CAS_RANK0                                 379584549  181       
+	Description: Write CAS access to Rank 0
+	---------------
+	785   UNC_M_WR_CAS_RANK1                                 379584550  181       
+	Description: Write CAS access to Rank 1
+	---------------
+	786   UNC_M_WR_CAS_RANK2                                 379584551  181       
+	Description: Write CAS access to Rank 2
+	---------------
+	787   UNC_M_WR_CAS_RANK3                                 379584552  181       
+	Description: Write CAS access to Rank 3
+	---------------
+	788   UNC_M_WR_CAS_RANK4                                 379584553  181       
+	Description: Write CAS access to Rank 4
+	---------------
+	789   UNC_M_WR_CAS_RANK5                                 379584554  181       
+	Description: Write CAS access to Rank 5
+	---------------
+	790   UNC_M_WR_CAS_RANK6                                 379584555  181       
+	Description: Write CAS access to Rank 6
+	---------------
+	791   UNC_M_WR_CAS_RANK7                                 379584556  181       
+	Description: Write CAS access to Rank 7
+	---------------
+	792   UNC_M_CLOCKTICKS                                   381681664  182       
+	Description: IMC Uncore clockticks (fixed counter)
+	---------------
+	793   UNC_M_DCLOCKTICKS                                  381681665  182       
+	Description: IMC Uncore clockticks (generic counters)
+	---------------
+	794   UNC_M_ACT_COUNT                                    381681666  182       
+	Description: DRAM Activate Count
+	---------------
+	795   UNC_M_CAS_COUNT                                    381681667  182       
+	Description: DRAM RD_CAS and WR_CAS Commands.
+	---------------
+	796   UNC_M_DRAM_PRE_ALL                                 381681668  182       
+	Description: DRAM Precharge All Commands
+	---------------
+	797   UNC_M_DRAM_REFRESH                                 381681669  182       
+	Description: Number of DRAM Refreshes Issued
+	---------------
+	798   UNC_M_ECC_CORRECTABLE_ERRORS                       381681670  182       
+	Description: ECC Correctable Errors
+	---------------
+	799   UNC_M_MAJOR_MODES                                  381681671  182       
+	Description: Cycles in a Major Mode
+	---------------
+	800   UNC_M_POWER_CHANNEL_DLLOFF                         381681672  182       
+	Description: Channel DLLOFF Cycles
+	---------------
+	801   UNC_M_POWER_CHANNEL_PPD                            381681673  182       
+	Description: Channel PPD Cycles
+	---------------
+	802   UNC_M_POWER_CKE_CYCLES                             381681674  182       
+	Description: CKE_ON_CYCLES by Rank
+	---------------
+	803   UNC_M_POWER_CRITICAL_THROTTLE_CYCLES               381681675  182       
+	Description: Critical Throttle Cycles
+	---------------
+	804   UNC_M_POWER_SELF_REFRESH                           381681676  182       
+	Description: Clock-Enabled Self-Refresh
+	---------------
+	805   UNC_M_POWER_THROTTLE_CYCLES                        381681677  182       
+	Description: Throttle Cycles
+	---------------
+	806   UNC_M_POWER_PCU_THROTTLING                         381681678  182       
+	Description: PCU throttling
+	---------------
+	807   UNC_M_PREEMPTION                                   381681679  182       
+	Description: Read Preemption Count
+	---------------
+	808   UNC_M_PRE_COUNT                                    381681680  182       
+	Description: DRAM Precharge commands.
+	---------------
+	809   UNC_M_RPQ_CYCLES_NE                                381681681  182       
+	Description: Read Pending Queue Not Empty
+	---------------
+	810   UNC_M_RPQ_INSERTS                                  381681682  182       
+	Description: Read Pending Queue Allocations
+	---------------
+	811   UNC_M_WPQ_CYCLES_FULL                              381681683  182       
+	Description: Write Pending Queue Full Cycles
+	---------------
+	812   UNC_M_WPQ_CYCLES_NE                                381681684  182       
+	Description: Write Pending Queue Not Empty
+	---------------
+	813   UNC_M_WPQ_READ_HIT                                 381681685  182       
+	Description: Write Pending Queue CAM Match
+	---------------
+	814   UNC_M_WPQ_WRITE_HIT                                381681686  182       
+	Description: Write Pending Queue CAM Match
+	---------------
+	815   UNC_M_BYP_CMDS                                     381681687  182       
+	Description: Bypass command event
+	---------------
+	816   UNC_M_RD_CAS_PRIO                                  381681688  182       
+	Description: Read CAS priority
+	---------------
+	817   UNC_M_RD_CAS_RANK0                                 381681689  182       
+	Description: Read CAS access to Rank 0
+	---------------
+	818   UNC_M_RD_CAS_RANK1                                 381681690  182       
+	Description: Read CAS access to Rank 1
+	---------------
+	819   UNC_M_RD_CAS_RANK2                                 381681691  182       
+	Description: Read CAS access to Rank 2
+	---------------
+	820   UNC_M_RD_CAS_RANK3                                 381681692  182       
+	Description: Read CAS access to Rank 3
+	---------------
+	821   UNC_M_RD_CAS_RANK4                                 381681693  182       
+	Description: Read CAS access to Rank 4
+	---------------
+	822   UNC_M_RD_CAS_RANK5                                 381681694  182       
+	Description: Read CAS access to Rank 5
+	---------------
+	823   UNC_M_RD_CAS_RANK6                                 381681695  182       
+	Description: Read CAS access to Rank 6
+	---------------
+	824   UNC_M_RD_CAS_RANK7                                 381681696  182       
+	Description: Read CAS access to Rank 7
+	---------------
+	825   UNC_M_VMSE_MXB_WR_OCCUPANCY                        381681697  182       
+	Description: VMSE MXB write buffer occupancy
+	---------------
+	826   UNC_M_VMSE_WR_PUSH                                 381681698  182       
+	Description: VMSE WR push issued
+	---------------
+	827   UNC_M_WMM_TO_RMM                                   381681699  182       
+	Description: Transitions from WMM to RMM because of low threshold
+	---------------
+	828   UNC_M_WRONG_MM                                     381681700  182       
+	Description: Not getting the requested major mode
+	---------------
+	829   UNC_M_WR_CAS_RANK0                                 381681701  182       
+	Description: Write CAS access to Rank 0
+	---------------
+	830   UNC_M_WR_CAS_RANK1                                 381681702  182       
+	Description: Write CAS access to Rank 1
+	---------------
+	831   UNC_M_WR_CAS_RANK2                                 381681703  182       
+	Description: Write CAS access to Rank 2
+	---------------
+	832   UNC_M_WR_CAS_RANK3                                 381681704  182       
+	Description: Write CAS access to Rank 3
+	---------------
+	833   UNC_M_WR_CAS_RANK4                                 381681705  182       
+	Description: Write CAS access to Rank 4
+	---------------
+	834   UNC_M_WR_CAS_RANK5                                 381681706  182       
+	Description: Write CAS access to Rank 5
+	---------------
+	835   UNC_M_WR_CAS_RANK6                                 381681707  182       
+	Description: Write CAS access to Rank 6
+	---------------
+	836   UNC_M_WR_CAS_RANK7                                 381681708  182       
+	Description: Write CAS access to Rank 7
+	---------------
+	837   UNC_P_CLOCKTICKS                                   387973120  185       
+	Description: PCU Uncore clockticks
+	---------------
+	838   UNC_P_CORE0_TRANSITION_CYCLES                      387973121  185       
+	Description: Core 0 C State Transition Cycles
+	---------------
+	839   UNC_P_CORE1_TRANSITION_CYCLES                      387973122  185       
+	Description: Core 1 C State Transition Cycles
+	---------------
+	840   UNC_P_CORE2_TRANSITION_CYCLES                      387973123  185       
+	Description: Core 2 C State Transition Cycles
+	---------------
+	841   UNC_P_CORE3_TRANSITION_CYCLES                      387973124  185       
+	Description: Core 3 C State Transition Cycles
+	---------------
+	842   UNC_P_CORE4_TRANSITION_CYCLES                      387973125  185       
+	Description: Core 4 C State Transition Cycles
+	---------------
+	843   UNC_P_CORE5_TRANSITION_CYCLES                      387973126  185       
+	Description: Core 5 C State Transition Cycles
+	---------------
+	844   UNC_P_CORE6_TRANSITION_CYCLES                      387973127  185       
+	Description: Core 6 C State Transition Cycles
+	---------------
+	845   UNC_P_CORE7_TRANSITION_CYCLES                      387973128  185       
+	Description: Core 7 C State Transition Cycles
+	---------------
+	846   UNC_P_CORE8_TRANSITION_CYCLES                      387973129  185       
+	Description: Core 8 C State Transition Cycles
+	---------------
+	847   UNC_P_CORE9_TRANSITION_CYCLES                      387973130  185       
+	Description: Core 9 C State Transition Cycles
+	---------------
+	848   UNC_P_CORE10_TRANSITION_CYCLES                     387973131  185       
+	Description: Core 10 C State Transition Cycles
+	---------------
+	849   UNC_P_CORE11_TRANSITION_CYCLES                     387973132  185       
+	Description: Core 11 C State Transition Cycles
+	---------------
+	850   UNC_P_CORE12_TRANSITION_CYCLES                     387973133  185       
+	Description: Core 12 C State Transition Cycles
+	---------------
+	851   UNC_P_CORE13_TRANSITION_CYCLES                     387973134  185       
+	Description: Core 13 C State Transition Cycles
+	---------------
+	852   UNC_P_CORE14_TRANSITION_CYCLES                     387973135  185       
+	Description: Core 14 C State Transition Cycles
+	---------------
+	853   UNC_P_CORE15_TRANSITION_CYCLES                     387973136  185       
+	Description: Core 15 C State Transition Cycles
+	---------------
+	854   UNC_P_CORE16_TRANSITION_CYCLES                     387973137  185       
+	Description: Core 16 C State Transition Cycles
+	---------------
+	855   UNC_P_CORE17_TRANSITION_CYCLES                     387973138  185       
+	Description: Core 17 C State Transition Cycles
+	---------------
+	856   UNC_P_DEMOTIONS_CORE0                              387973139  185       
+	Description: Core 0 C State Demotions
+	---------------
+	857   UNC_P_DEMOTIONS_CORE1                              387973140  185       
+	Description: Core 1 C State Demotions
+	---------------
+	858   UNC_P_DEMOTIONS_CORE2                              387973141  185       
+	Description: Core 2 C State Demotions
+	---------------
+	859   UNC_P_DEMOTIONS_CORE3                              387973142  185       
+	Description: Core 3 C State Demotions
+	---------------
+	860   UNC_P_DEMOTIONS_CORE4                              387973143  185       
+	Description: Core 4 C State Demotions
+	---------------
+	861   UNC_P_DEMOTIONS_CORE5                              387973144  185       
+	Description: Core 5 C State Demotions
+	---------------
+	862   UNC_P_DEMOTIONS_CORE6                              387973145  185       
+	Description: Core 6 C State Demotions
+	---------------
+	863   UNC_P_DEMOTIONS_CORE7                              387973146  185       
+	Description: Core 7 C State Demotions
+	---------------
+	864   UNC_P_DEMOTIONS_CORE8                              387973147  185       
+	Description: Core 8 C State Demotions
+	---------------
+	865   UNC_P_DEMOTIONS_CORE9                              387973148  185       
+	Description: Core 9 C State Demotions
+	---------------
+	866   UNC_P_DEMOTIONS_CORE10                             387973149  185       
+	Description: Core 10 C State Demotions
+	---------------
+	867   UNC_P_DEMOTIONS_CORE11                             387973150  185       
+	Description: Core 11 C State Demotions
+	---------------
+	868   UNC_P_DEMOTIONS_CORE12                             387973151  185       
+	Description: Core 12 C State Demotions
+	---------------
+	869   UNC_P_DEMOTIONS_CORE13                             387973152  185       
+	Description: Core 13 C State Demotions
+	---------------
+	870   UNC_P_DEMOTIONS_CORE14                             387973153  185       
+	Description: Core 14 C State Demotions
+	---------------
+	871   UNC_P_DEMOTIONS_CORE15                             387973154  185       
+	Description: Core 15 C State Demotions
+	---------------
+	872   UNC_P_DEMOTIONS_CORE16                             387973155  185       
+	Description: Core 16 C State Demotions
+	---------------
+	873   UNC_P_DEMOTIONS_CORE17                             387973156  185       
+	Description: Core 17 C State Demotions
+	---------------
+	874   UNC_P_FREQ_BAND0_CYCLES                            387973157  185       
+	Description: Frequency Residency
+	---------------
+	875   UNC_P_FREQ_BAND1_CYCLES                            387973158  185       
+	Description: Frequency Residency
+	---------------
+	876   UNC_P_FREQ_BAND2_CYCLES                            387973159  185       
+	Description: Frequency Residency
+	---------------
+	877   UNC_P_FREQ_BAND3_CYCLES                            387973160  185       
+	Description: Frequency Residency
+	---------------
+	878   UNC_P_FREQ_MAX_LIMIT_THERMAL_CYCLES                387973161  185       
+	Description: Thermal Strongest Upper Limit Cycles
+	---------------
+	879   UNC_P_FREQ_MAX_OS_CYCLES                           387973162  185       
+	Description: OS Strongest Upper Limit Cycles
+	---------------
+	880   UNC_P_FREQ_MAX_POWER_CYCLES                        387973163  185       
+	Description: Power Strongest Upper Limit Cycles
+	---------------
+	881   UNC_P_FREQ_MIN_IO_P_CYCLES                         387973164  185       
+	Description: IO P Limit Strongest Lower Limit Cycles
+	---------------
+	882   UNC_P_FREQ_TRANS_CYCLES                            387973165  185       
+	Description: Cycles spent changing Frequency
+	---------------
+	883   UNC_P_PKG_RESIDENCY_C0_CYCLES                      387973166  185       
+	Description: Package C State residency - C0
+	---------------
+	884   UNC_P_PKG_RESIDENCY_C1E_CYCLES                     387973167  185       
+	Description: Package C State residency - C1E
+	---------------
+	885   UNC_P_PKG_RESIDENCY_C2E_CYCLES                     387973168  185       
+	Description: Package C State residency - C2E
+	---------------
+	886   UNC_P_PKG_RESIDENCY_C3_CYCLES                      387973169  185       
+	Description: Package C State residency - C3
+	---------------
+	887   UNC_P_PKG_RESIDENCY_C6_CYCLES                      387973170  185       
+	Description: Package C State residency - C6
+	---------------
+	888   UNC_P_PKG_RESIDENCY_C7_CYCLES                      387973171  185       
+	Description: Package C State residency - C7
+	---------------
+	889   UNC_P_MEMORY_PHASE_SHEDDING_CYCLES                 387973172  185       
+	Description: Memory Phase Shedding Cycles
+	---------------
+	890   UNC_P_POWER_STATE_OCCUPANCY                        387973173  185       
+	Description: Number of cores in C0
+	---------------
+	891   UNC_P_PROCHOT_EXTERNAL_CYCLES                      387973174  185       
+	Description: External Prochot
+	---------------
+	892   UNC_P_PROCHOT_INTERNAL_CYCLES                      387973175  185       
+	Description: Internal Prochot
+	---------------
+	893   UNC_P_TOTAL_TRANSITION_CYCLES                      387973176  185       
+	Description: Total Core C State Transition Cycles
+	---------------
+	894   UNC_P_VR_HOT_CYCLES                                387973177  185       
+	Description: VR Hot
+	---------------
+	895   UNC_Q_CLOCKTICKS                                   390070272  186       
+	Description: Number of qfclks
+	---------------
+	896   UNC_Q_CTO_COUNT                                    390070273  186       
+	Description: Count of CTO Events
+	---------------
+	897   UNC_Q_DIRECT2CORE                                  390070274  186       
+	Description: Direct 2 Core Spawning
+	---------------
+	898   UNC_Q_L1_POWER_CYCLES                              390070275  186       
+	Description: Cycles in L1
+	---------------
+	899   UNC_Q_RXL0P_POWER_CYCLES                           390070276  186       
+	Description: Cycles in L0p
+	---------------
+	900   UNC_Q_RXL0_POWER_CYCLES                            390070277  186       
+	Description: Cycles in L0
+	---------------
+	901   UNC_Q_RXL_BYPASSED                                 390070278  186       
+	Description: Rx Flit Buffer Bypassed
+	---------------
+	902   UNC_Q_RXL_CREDITS_CONSUMED_VN0                     390070279  186       
+	Description: VN0 Credit Consumed
+	---------------
+	903   UNC_Q_RXL_CREDITS_CONSUMED_VN1                     390070280  186       
+	Description: VN1 Credit Consumed
+	---------------
+	904   UNC_Q_RXL_CREDITS_CONSUMED_VNA                     390070281  186       
+	Description: VNA Credit Consumed
+	---------------
+	905   UNC_Q_RXL_CYCLES_NE                                390070282  186       
+	Description: RxQ Cycles Not Empty
+	---------------
+	906   UNC_Q_RXL_FLITS_G1                                 390070283  186       
+	Description: Flits Received - Group 1
+	---------------
+	907   UNC_Q_RXL_FLITS_G2                                 390070284  186       
+	Description: Flits Received - Group 2
+	---------------
+	908   UNC_Q_RXL_INSERTS                                  390070285  186       
+	Description: Rx Flit Buffer Allocations
+	---------------
+	909   UNC_Q_RXL_INSERTS_DRS                              390070286  186       
+	Description: Rx Flit Buffer Allocations - DRS
+	---------------
+	910   UNC_Q_RXL_INSERTS_HOM                              390070287  186       
+	Description: Rx Flit Buffer Allocations - HOM
+	---------------
+	911   UNC_Q_RXL_INSERTS_NCB                              390070288  186       
+	Description: Rx Flit Buffer Allocations - NCB
+	---------------
+	912   UNC_Q_RXL_INSERTS_NCS                              390070289  186       
+	Description: Rx Flit Buffer Allocations - NCS
+	---------------
+	913   UNC_Q_RXL_INSERTS_NDR                              390070290  186       
+	Description: Rx Flit Buffer Allocations - NDR
+	---------------
+	914   UNC_Q_RXL_INSERTS_SNP                              390070291  186       
+	Description: Rx Flit Buffer Allocations - SNP
+	---------------
+	915   UNC_Q_RXL_OCCUPANCY                                390070292  186       
+	Description: RxQ Occupancy - All Packets
+	---------------
+	916   UNC_Q_RXL_OCCUPANCY_DRS                            390070293  186       
+	Description: RxQ Occupancy - DRS
+	---------------
+	917   UNC_Q_RXL_OCCUPANCY_HOM                            390070294  186       
+	Description: RxQ Occupancy - HOM
+	---------------
+	918   UNC_Q_RXL_OCCUPANCY_NCB                            390070295  186       
+	Description: RxQ Occupancy - NCB
+	---------------
+	919   UNC_Q_RXL_OCCUPANCY_NCS                            390070296  186       
+	Description: RxQ Occupancy - NCS
+	---------------
+	920   UNC_Q_RXL_OCCUPANCY_NDR                            390070297  186       
+	Description: RxQ Occupancy - NDR
+	---------------
+	921   UNC_Q_RXL_OCCUPANCY_SNP                            390070298  186       
+	Description: RxQ Occupancy - SNP
+	---------------
+	922   UNC_Q_TXL0P_POWER_CYCLES                           390070299  186       
+	Description: Cycles in L0p
+	---------------
+	923   UNC_Q_TXL0_POWER_CYCLES                            390070300  186       
+	Description: Cycles in L0
+	---------------
+	924   UNC_Q_TXL_BYPASSED                                 390070301  186       
+	Description: Tx Flit Buffer Bypassed
+	---------------
+	925   UNC_Q_TXL_CYCLES_NE                                390070302  186       
+	Description: Tx Flit Buffer Cycles not Empty
+	---------------
+	926   UNC_Q_TXL_FLITS_G0                                 390070303  186       
+	Description: Flits Transferred - Group 0
+	---------------
+	927   UNC_Q_TXL_FLITS_G1                                 390070304  186       
+	Description: Flits Transferred - Group 1
+	---------------
+	928   UNC_Q_TXL_FLITS_G2                                 390070305  186       
+	Description: Flits Transferred - Group 2
+	---------------
+	929   UNC_Q_TXL_INSERTS                                  390070306  186       
+	Description: Tx Flit Buffer Allocations
+	---------------
+	930   UNC_Q_TXL_OCCUPANCY                                390070307  186       
+	Description: Tx Flit Buffer Occupancy
+	---------------
+	931   UNC_Q_VNA_CREDIT_RETURNS                           390070308  186       
+	Description: VNA Credits Returned
+	---------------
+	932   UNC_Q_VNA_CREDIT_RETURN_OCCUPANCY                  390070309  186       
+	Description: VNA Credits Pending Return - Occupancy
+	---------------
+	933   UNC_Q_TXR_AD_HOM_CREDIT_ACQUIRED                   390070310  186       
+	Description: R3QPI Egress credit occupancy AD HOM
+	---------------
+	934   UNC_Q_TXR_AD_HOM_CREDIT_OCCUPANCY                  390070311  186       
+	Description: R3QPI Egress credit occupancy AD HOM
+	---------------
+	935   UNC_Q_TXR_AD_NDR_CREDIT_ACQUIRED                   390070312  186       
+	Description: R3QPI Egress credit occupancy AD NDR
+	---------------
+	936   UNC_Q_TXR_AD_NDR_CREDIT_OCCUPANCY                  390070313  186       
+	Description: R3QPI Egress credit occupancy AD NDR
+	---------------
+	937   UNC_Q_TXR_AD_SNP_CREDIT_ACQUIRED                   390070314  186       
+	Description: R3QPI Egress credit occupancy AD SNP
+	---------------
+	938   UNC_Q_TXR_AD_SNP_CREDIT_OCCUPANCY                  390070315  186       
+	Description: R3QPI Egress credit occupancy AD SNP
+	---------------
+	939   UNC_Q_TXR_AK_NDR_CREDIT_ACQUIRED                   390070316  186       
+	Description: R3QPI Egress credit occupancy AK NDR
+	---------------
+	940   UNC_Q_TXR_AK_NDR_CREDIT_OCCUPANCY                  390070317  186       
+	Description: R3QPI Egress credit occupancy AD NDR
+	---------------
+	941   UNC_Q_TXR_BL_DRS_CREDIT_ACQUIRED                   390070318  186       
+	Description: R3QPI Egress credit occupancy BL DRS
+	---------------
+	942   UNC_Q_TXR_BL_DRS_CREDIT_OCCUPANCY                  390070319  186       
+	Description: R3QPI Egress credit occupancy BL DRS
+	---------------
+	943   UNC_Q_TXR_BL_NCB_CREDIT_ACQUIRED                   390070320  186       
+	Description: R3QPI Egress credit occupancy BL NCB
+	---------------
+	944   UNC_Q_TXR_BL_NCB_CREDIT_OCCUPANCY                  390070321  186       
+	Description: R3QPI Egress credit occupancy BL NCB
+	---------------
+	945   UNC_Q_TXR_BL_NCS_CREDIT_ACQUIRED                   390070322  186       
+	Description: R3QPI Egress credit occupancy BL NCS
+	---------------
+	946   UNC_Q_TXR_BL_NCS_CREDIT_OCCUPANCY                  390070323  186       
+	Description: R3QPI Egress credit occupancy BL NCS
+	---------------
+	947   UNC_Q_CLOCKTICKS                                   392167424  187       
+	Description: Number of qfclks
+	---------------
+	948   UNC_Q_CTO_COUNT                                    392167425  187       
+	Description: Count of CTO Events
+	---------------
+	949   UNC_Q_DIRECT2CORE                                  392167426  187       
+	Description: Direct 2 Core Spawning
+	---------------
+	950   UNC_Q_L1_POWER_CYCLES                              392167427  187       
+	Description: Cycles in L1
+	---------------
+	951   UNC_Q_RXL0P_POWER_CYCLES                           392167428  187       
+	Description: Cycles in L0p
+	---------------
+	952   UNC_Q_RXL0_POWER_CYCLES                            392167429  187       
+	Description: Cycles in L0
+	---------------
+	953   UNC_Q_RXL_BYPASSED                                 392167430  187       
+	Description: Rx Flit Buffer Bypassed
+	---------------
+	954   UNC_Q_RXL_CREDITS_CONSUMED_VN0                     392167431  187       
+	Description: VN0 Credit Consumed
+	---------------
+	955   UNC_Q_RXL_CREDITS_CONSUMED_VN1                     392167432  187       
+	Description: VN1 Credit Consumed
+	---------------
+	956   UNC_Q_RXL_CREDITS_CONSUMED_VNA                     392167433  187       
+	Description: VNA Credit Consumed
+	---------------
+	957   UNC_Q_RXL_CYCLES_NE                                392167434  187       
+	Description: RxQ Cycles Not Empty
+	---------------
+	958   UNC_Q_RXL_FLITS_G1                                 392167435  187       
+	Description: Flits Received - Group 1
+	---------------
+	959   UNC_Q_RXL_FLITS_G2                                 392167436  187       
+	Description: Flits Received - Group 2
+	---------------
+	960   UNC_Q_RXL_INSERTS                                  392167437  187       
+	Description: Rx Flit Buffer Allocations
+	---------------
+	961   UNC_Q_RXL_INSERTS_DRS                              392167438  187       
+	Description: Rx Flit Buffer Allocations - DRS
+	---------------
+	962   UNC_Q_RXL_INSERTS_HOM                              392167439  187       
+	Description: Rx Flit Buffer Allocations - HOM
+	---------------
+	963   UNC_Q_RXL_INSERTS_NCB                              392167440  187       
+	Description: Rx Flit Buffer Allocations - NCB
+	---------------
+	964   UNC_Q_RXL_INSERTS_NCS                              392167441  187       
+	Description: Rx Flit Buffer Allocations - NCS
+	---------------
+	965   UNC_Q_RXL_INSERTS_NDR                              392167442  187       
+	Description: Rx Flit Buffer Allocations - NDR
+	---------------
+	966   UNC_Q_RXL_INSERTS_SNP                              392167443  187       
+	Description: Rx Flit Buffer Allocations - SNP
+	---------------
+	967   UNC_Q_RXL_OCCUPANCY                                392167444  187       
+	Description: RxQ Occupancy - All Packets
+	---------------
+	968   UNC_Q_RXL_OCCUPANCY_DRS                            392167445  187       
+	Description: RxQ Occupancy - DRS
+	---------------
+	969   UNC_Q_RXL_OCCUPANCY_HOM                            392167446  187       
+	Description: RxQ Occupancy - HOM
+	---------------
+	970   UNC_Q_RXL_OCCUPANCY_NCB                            392167447  187       
+	Description: RxQ Occupancy - NCB
+	---------------
+	971   UNC_Q_RXL_OCCUPANCY_NCS                            392167448  187       
+	Description: RxQ Occupancy - NCS
+	---------------
+	972   UNC_Q_RXL_OCCUPANCY_NDR                            392167449  187       
+	Description: RxQ Occupancy - NDR
+	---------------
+	973   UNC_Q_RXL_OCCUPANCY_SNP                            392167450  187       
+	Description: RxQ Occupancy - SNP
+	---------------
+	974   UNC_Q_TXL0P_POWER_CYCLES                           392167451  187       
+	Description: Cycles in L0p
+	---------------
+	975   UNC_Q_TXL0_POWER_CYCLES                            392167452  187       
+	Description: Cycles in L0
+	---------------
+	976   UNC_Q_TXL_BYPASSED                                 392167453  187       
+	Description: Tx Flit Buffer Bypassed
+	---------------
+	977   UNC_Q_TXL_CYCLES_NE                                392167454  187       
+	Description: Tx Flit Buffer Cycles not Empty
+	---------------
+	978   UNC_Q_TXL_FLITS_G0                                 392167455  187       
+	Description: Flits Transferred - Group 0
+	---------------
+	979   UNC_Q_TXL_FLITS_G1                                 392167456  187       
+	Description: Flits Transferred - Group 1
+	---------------
+	980   UNC_Q_TXL_FLITS_G2                                 392167457  187       
+	Description: Flits Transferred - Group 2
+	---------------
+	981   UNC_Q_TXL_INSERTS                                  392167458  187       
+	Description: Tx Flit Buffer Allocations
+	---------------
+	982   UNC_Q_TXL_OCCUPANCY                                392167459  187       
+	Description: Tx Flit Buffer Occupancy
+	---------------
+	983   UNC_Q_VNA_CREDIT_RETURNS                           392167460  187       
+	Description: VNA Credits Returned
+	---------------
+	984   UNC_Q_VNA_CREDIT_RETURN_OCCUPANCY                  392167461  187       
+	Description: VNA Credits Pending Return - Occupancy
+	---------------
+	985   UNC_Q_TXR_AD_HOM_CREDIT_ACQUIRED                   392167462  187       
+	Description: R3QPI Egress credit occupancy AD HOM
+	---------------
+	986   UNC_Q_TXR_AD_HOM_CREDIT_OCCUPANCY                  392167463  187       
+	Description: R3QPI Egress credit occupancy AD HOM
+	---------------
+	987   UNC_Q_TXR_AD_NDR_CREDIT_ACQUIRED                   392167464  187       
+	Description: R3QPI Egress credit occupancy AD NDR
+	---------------
+	988   UNC_Q_TXR_AD_NDR_CREDIT_OCCUPANCY                  392167465  187       
+	Description: R3QPI Egress credit occupancy AD NDR
+	---------------
+	989   UNC_Q_TXR_AD_SNP_CREDIT_ACQUIRED                   392167466  187       
+	Description: R3QPI Egress credit occupancy AD SNP
+	---------------
+	990   UNC_Q_TXR_AD_SNP_CREDIT_OCCUPANCY                  392167467  187       
+	Description: R3QPI Egress credit occupancy AD SNP
+	---------------
+	991   UNC_Q_TXR_AK_NDR_CREDIT_ACQUIRED                   392167468  187       
+	Description: R3QPI Egress credit occupancy AK NDR
+	---------------
+	992   UNC_Q_TXR_AK_NDR_CREDIT_OCCUPANCY                  392167469  187       
+	Description: R3QPI Egress credit occupancy AD NDR
+	---------------
+	993   UNC_Q_TXR_BL_DRS_CREDIT_ACQUIRED                   392167470  187       
+	Description: R3QPI Egress credit occupancy BL DRS
+	---------------
+	994   UNC_Q_TXR_BL_DRS_CREDIT_OCCUPANCY                  392167471  187       
+	Description: R3QPI Egress credit occupancy BL DRS
+	---------------
+	995   UNC_Q_TXR_BL_NCB_CREDIT_ACQUIRED                   392167472  187       
+	Description: R3QPI Egress credit occupancy BL NCB
+	---------------
+	996   UNC_Q_TXR_BL_NCB_CREDIT_OCCUPANCY                  392167473  187       
+	Description: R3QPI Egress credit occupancy BL NCB
+	---------------
+	997   UNC_Q_TXR_BL_NCS_CREDIT_ACQUIRED                   392167474  187       
+	Description: R3QPI Egress credit occupancy BL NCS
+	---------------
+	998   UNC_Q_TXR_BL_NCS_CREDIT_OCCUPANCY                  392167475  187       
+	Description: R3QPI Egress credit occupancy BL NCS
+	---------------
+	999   UNC_U_EVENT_MSG                                    394264576  188       
+	Description: VLW Received
+	---------------
+	1000  UNC_U_PHOLD_CYCLES                                 394264577  188       
+	Description: Cycles PHOLD asserts to Ack
+	---------------
+	1001  UNC_U_RACU_REQUESTS                                394264578  188       
+	Description: RACU requests
+	---------------
+	1002  UNC_R2_CLOCKTICKS                                  396361728  189       
+	Description: Number of uclks in domain
+	---------------
+	1003  UNC_R2_RING_AD_USED                                396361729  189       
+	Description: R2 AD Ring in Use
+	---------------
+	1004  UNC_R2_RING_AK_USED                                396361730  189       
+	Description: R2 AK Ring in Use
+	---------------
+	1005  UNC_R2_RING_BL_USED                                396361731  189       
+	Description: R2 BL Ring in Use
+	---------------
+	1006  UNC_R2_RING_IV_USED                                396361732  189       
+	Description: R2 IV Ring in Use
+	---------------
+	1007  UNC_R2_RXR_AK_BOUNCES                              396361733  189       
+	Description: AK Ingress Bounced
+	---------------
+	1008  UNC_R2_RXR_OCCUPANCY                               396361734  189       
+	Description: Ingress occupancy accumulator
+	---------------
+	1009  UNC_R2_RXR_CYCLES_NE                               396361735  189       
+	Description: Ingress Cycles Not Empty
+	---------------
+	1010  UNC_R2_RXR_INSERTS                                 396361736  189       
+	Description: Ingress inserts
+	---------------
+	1011  UNC_R2_TXR_NACK_CW                                 396361737  189       
+	Description: Egress clockwise BACK
+	---------------
+	1012  UNC_R2_SBO0_CREDITS_ACQUIRED                       396361738  189       
+	Description: SBO0 credits acquired
+	---------------
+	1013  UNC_R2_STALL_NO_SBO_CREDIT                         396361739  189       
+	Description: Stall on No SBo Credits
+	---------------
+	1014  UNC_R2_IIO_CREDIT                                  396361740  189       
+	Description: Egress counter-clockwise BACK
+	---------------
+	1015  UNC_R3_CLOCKTICKS                                  398458880  190       
+	Description: Number of uclks in domain
+	---------------
+	1016  UNC_R3_RING_AD_USED                                398458881  190       
+	Description: R3 AD Ring in Use
+	---------------
+	1017  UNC_R3_RING_AK_USED                                398458882  190       
+	Description: R3 AK Ring in Use
+	---------------
+	1018  UNC_R3_RING_BL_USED                                398458883  190       
+	Description: R3 BL Ring in Use
+	---------------
+	1019  UNC_R3_RING_IV_USED                                398458884  190       
+	Description: R3 IV Ring in Use
+	---------------
+	1020  UNC_R3_RING_SINK_STARVED                           398458885  190       
+	Description: R3 Ring stop starved
+	---------------
+	1021  UNC_R3_RXR_CYCLES_NE                               398458886  190       
+	Description: Ingress Cycles Not Empty
+	---------------
+	1022  UNC_R3_RXR_CYCLES_NE_VN1                           398458887  190       
+	Description: VN1 Ingress Cycles Not Empty
+	---------------
+	1023  UNC_R3_RXR_INSERTS                                 398458888  190       
+	Description: Ingress Allocations
+	---------------
+	1024  UNC_R3_RXR_INSERTS_VN1                             398458889  190       
+	Description: VN1 Ingress Allocations
+	---------------
+	1025  UNC_R3_RXR_OCCUPANCY_VN1                           398458890  190       
+	Description: VN1 Ingress Occupancy Accumulator
+	---------------
+	1026  UNC_R3_VN0_CREDITS_REJECT                          398458891  190       
+	Description: VN0 Credit Acquisition Failed
+	---------------
+	1027  UNC_R3_VN0_CREDITS_USED                            398458892  190       
+	Description: VN0 Credit Used
+	---------------
+	1028  UNC_R3_VNA_CREDITS_ACQUIRED                        398458893  190       
+	Description: VNA credit Acquisitions
+	---------------
+	1029  UNC_R3_VNA_CREDITS_REJECT                          398458894  190       
+	Description: VNA Credit Reject
+	---------------
+	1030  UNC_R3_STALL_NO_SBO_CREDIT                         398458895  190       
+	Description: Stall no SBO credit
+	---------------
+	1031  UNC_R3_C_LO_AD_CREDITS_EMPTY                       398458896  190       
+	Description: Cbox AD credits empty
+	---------------
+	1032  UNC_R3_C_HI_AD_CREDITS_EMPTY                       398458897  190       
+	Description: Cbox AD credits empty
+	---------------
+	1033  UNC_R3_QPI0_AD_CREDITS_EMPTY                       398458898  190       
+	Description: QPI0 AD credits  empty
+	---------------
+	1034  UNC_R3_QPI0_BL_CREDITS_EMPTY                       398458899  190       
+	Description: QPI0 BL credits  empty
+	---------------
+	1035  UNC_R3_QPI1_BL_CREDITS_EMPTY                       398458900  190       
+	Description: QPI0 BL credits  empty
+	---------------
+	1036  UNC_R3_HA_R2_BL_CREDITS_EMPTY                      398458901  190       
+	Description: HA/R2 AD credits  empty
+	---------------
+	1037  UNC_R3_SBO0_CREDITS_ACQUIRED                       398458902  190       
+	Description: SBO0 credits acquired
+	---------------
+	1038  UNC_R3_SBO1_CREDITS_ACQUIRED                       398458903  190       
+	Description: SBO1 credits acquired
+	---------------
+	1039  UNC_R3_TXR_NACK                                    398458904  190       
+	Description: Egress NACK
+	---------------
+	1040  UNC_R3_VN1_CREDITS_REJECT                          398458905  190       
+	Description: VN1 Credit Acquisition Failed
+	---------------
+	1041  UNC_R3_VN1_CREDITS_USED                            398458906  190       
+	Description: VN0 Credit Used
+	---------------
+	1042  UNC_R3_CLOCKTICKS                                  400556032  191       
+	Description: Number of uclks in domain
+	---------------
+	1043  UNC_R3_RING_AD_USED                                400556033  191       
+	Description: R3 AD Ring in Use
+	---------------
+	1044  UNC_R3_RING_AK_USED                                400556034  191       
+	Description: R3 AK Ring in Use
+	---------------
+	1045  UNC_R3_RING_BL_USED                                400556035  191       
+	Description: R3 BL Ring in Use
+	---------------
+	1046  UNC_R3_RING_IV_USED                                400556036  191       
+	Description: R3 IV Ring in Use
+	---------------
+	1047  UNC_R3_RING_SINK_STARVED                           400556037  191       
+	Description: R3 Ring stop starved
+	---------------
+	1048  UNC_R3_RXR_CYCLES_NE                               400556038  191       
+	Description: Ingress Cycles Not Empty
+	---------------
+	1049  UNC_R3_RXR_CYCLES_NE_VN1                           400556039  191       
+	Description: VN1 Ingress Cycles Not Empty
+	---------------
+	1050  UNC_R3_RXR_INSERTS                                 400556040  191       
+	Description: Ingress Allocations
+	---------------
+	1051  UNC_R3_RXR_INSERTS_VN1                             400556041  191       
+	Description: VN1 Ingress Allocations
+	---------------
+	1052  UNC_R3_RXR_OCCUPANCY_VN1                           400556042  191       
+	Description: VN1 Ingress Occupancy Accumulator
+	---------------
+	1053  UNC_R3_VN0_CREDITS_REJECT                          400556043  191       
+	Description: VN0 Credit Acquisition Failed
+	---------------
+	1054  UNC_R3_VN0_CREDITS_USED                            400556044  191       
+	Description: VN0 Credit Used
+	---------------
+	1055  UNC_R3_VNA_CREDITS_ACQUIRED                        400556045  191       
+	Description: VNA credit Acquisitions
+	---------------
+	1056  UNC_R3_VNA_CREDITS_REJECT                          400556046  191       
+	Description: VNA Credit Reject
+	---------------
+	1057  UNC_R3_STALL_NO_SBO_CREDIT                         400556047  191       
+	Description: Stall no SBO credit
+	---------------
+	1058  UNC_R3_C_LO_AD_CREDITS_EMPTY                       400556048  191       
+	Description: Cbox AD credits empty
+	---------------
+	1059  UNC_R3_C_HI_AD_CREDITS_EMPTY                       400556049  191       
+	Description: Cbox AD credits empty
+	---------------
+	1060  UNC_R3_QPI0_AD_CREDITS_EMPTY                       400556050  191       
+	Description: QPI0 AD credits  empty
+	---------------
+	1061  UNC_R3_QPI0_BL_CREDITS_EMPTY                       400556051  191       
+	Description: QPI0 BL credits  empty
+	---------------
+	1062  UNC_R3_QPI1_BL_CREDITS_EMPTY                       400556052  191       
+	Description: QPI0 BL credits  empty
+	---------------
+	1063  UNC_R3_HA_R2_BL_CREDITS_EMPTY                      400556053  191       
+	Description: HA/R2 AD credits  empty
+	---------------
+	1064  UNC_R3_SBO0_CREDITS_ACQUIRED                       400556054  191       
+	Description: SBO0 credits acquired
+	---------------
+	1065  UNC_R3_SBO1_CREDITS_ACQUIRED                       400556055  191       
+	Description: SBO1 credits acquired
+	---------------
+	1066  UNC_R3_TXR_NACK                                    400556056  191       
+	Description: Egress NACK
+	---------------
+	1067  UNC_R3_VN1_CREDITS_REJECT                          400556057  191       
+	Description: VN1 Credit Acquisition Failed
+	---------------
+	1068  UNC_R3_VN1_CREDITS_USED                            400556058  191       
+	Description: VN0 Credit Used
+	---------------
+	1069  UNC_S_CLOCKTICKS                                   406847488  194       
+	Description: S-box Uncore clockticks
+	---------------
+	1070  UNC_S_RING_AD_USED                                 406847489  194       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1071  UNC_S_RING_AK_USED                                 406847490  194       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1072  UNC_S_RING_BL_USED                                 406847491  194       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1073  UNC_S_RING_IV_USED                                 406847492  194       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1074  UNC_S_RING_BOUNCES                                 406847493  194       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	1075  UNC_S_FAST_ASSERTED                                406847494  194       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	1076  UNC_C_BOUNCE_CONTROL                               406847495  194       
+	Description: Bounce control
+	---------------
+	1077  UNC_S_RXR_OCCUPANCY                                406847496  194       
+	Description: Ingress Occupancy
+	---------------
+	1078  UNC_S_RXR_BYPASS                                   406847497  194       
+	Description: Ingress Allocations
+	---------------
+	1079  UNC_S_RXR_INSERTS                                  406847498  194       
+	Description: Ingress Allocations
+	---------------
+	1080  UNC_S_TXR_ADS_USED                                 406847499  194       
+	Description: Egress events
+	---------------
+	1081  UNC_S_TXR_INSERTS                                  406847500  194       
+	Description: Egress allocations
+	---------------
+	1082  UNC_S_TXR_OCCUPANCY                                406847501  194       
+	Description: Egress allocations
+	---------------
+	1083  UNC_S_CLOCKTICKS                                   408944640  195       
+	Description: S-box Uncore clockticks
+	---------------
+	1084  UNC_S_RING_AD_USED                                 408944641  195       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1085  UNC_S_RING_AK_USED                                 408944642  195       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1086  UNC_S_RING_BL_USED                                 408944643  195       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1087  UNC_S_RING_IV_USED                                 408944644  195       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1088  UNC_S_RING_BOUNCES                                 408944645  195       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	1089  UNC_S_FAST_ASSERTED                                408944646  195       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	1090  UNC_C_BOUNCE_CONTROL                               408944647  195       
+	Description: Bounce control
+	---------------
+	1091  UNC_S_RXR_OCCUPANCY                                408944648  195       
+	Description: Ingress Occupancy
+	---------------
+	1092  UNC_S_RXR_BYPASS                                   408944649  195       
+	Description: Ingress Allocations
+	---------------
+	1093  UNC_S_RXR_INSERTS                                  408944650  195       
+	Description: Ingress Allocations
+	---------------
+	1094  UNC_S_TXR_ADS_USED                                 408944651  195       
+	Description: Egress events
+	---------------
+	1095  UNC_S_TXR_INSERTS                                  408944652  195       
+	Description: Egress allocations
+	---------------
+	1096  UNC_S_TXR_OCCUPANCY                                408944653  195       
+	Description: Egress allocations
+	---------------
+	1097  UNC_S_CLOCKTICKS                                   411041792  196       
+	Description: S-box Uncore clockticks
+	---------------
+	1098  UNC_S_RING_AD_USED                                 411041793  196       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1099  UNC_S_RING_AK_USED                                 411041794  196       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1100  UNC_S_RING_BL_USED                                 411041795  196       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1101  UNC_S_RING_IV_USED                                 411041796  196       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1102  UNC_S_RING_BOUNCES                                 411041797  196       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	1103  UNC_S_FAST_ASSERTED                                411041798  196       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	1104  UNC_C_BOUNCE_CONTROL                               411041799  196       
+	Description: Bounce control
+	---------------
+	1105  UNC_S_RXR_OCCUPANCY                                411041800  196       
+	Description: Ingress Occupancy
+	---------------
+	1106  UNC_S_RXR_BYPASS                                   411041801  196       
+	Description: Ingress Allocations
+	---------------
+	1107  UNC_S_RXR_INSERTS                                  411041802  196       
+	Description: Ingress Allocations
+	---------------
+	1108  UNC_S_TXR_ADS_USED                                 411041803  196       
+	Description: Egress events
+	---------------
+	1109  UNC_S_TXR_INSERTS                                  411041804  196       
+	Description: Egress allocations
+	---------------
+	1110  UNC_S_TXR_OCCUPANCY                                411041805  196       
+	Description: Egress allocations
+	---------------
+	1111  UNC_S_CLOCKTICKS                                   413138944  197       
+	Description: S-box Uncore clockticks
+	---------------
+	1112  UNC_S_RING_AD_USED                                 413138945  197       
+	Description: Address ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1113  UNC_S_RING_AK_USED                                 413138946  197       
+	Description: Acknowledgement ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1114  UNC_S_RING_BL_USED                                 413138947  197       
+	Description: Bus or Data ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1115  UNC_S_RING_IV_USED                                 413138948  197       
+	Description: Invalidate ring in use. Counts number of cycles ring is being used at this ring stop
+	---------------
+	1116  UNC_S_RING_BOUNCES                                 413138949  197       
+	Description: Number of LLC responses that bounced in the ring
+	---------------
+	1117  UNC_S_FAST_ASSERTED                                413138950  197       
+	Description: Number of cycles in which the local distress or incoming distress signals are asserted (FaST). Incoming distress includes both up and down
+	---------------
+	1118  UNC_C_BOUNCE_CONTROL                               413138951  197       
+	Description: Bounce control
+	---------------
+	1119  UNC_S_RXR_OCCUPANCY                                413138952  197       
+	Description: Ingress Occupancy
+	---------------
+	1120  UNC_S_RXR_BYPASS                                   413138953  197       
+	Description: Ingress Allocations
+	---------------
+	1121  UNC_S_RXR_INSERTS                                  413138954  197       
+	Description: Ingress Allocations
+	---------------
+	1122  UNC_S_TXR_ADS_USED                                 413138955  197       
+	Description: Egress events
+	---------------
+	1123  UNC_S_TXR_INSERTS                                  413138956  197       
+	Description: Egress allocations
+	---------------
+	1124  UNC_S_TXR_OCCUPANCY                                413138957  197       
+	Description: Egress allocations
+	---------------
