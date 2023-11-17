@@ -1,0 +1,20 @@
+#!/bin/bash
+inputs=("1-ps00117" "2-ps51656" "3-ps51164" "4-ps51819" "5-ps50216" "6-ps01071" "8-ps00373" "9-ps50042" "10-ps50001" "11-ps51375" "12-ps50860" "13-ps50011")
+
+methods=( "pfem")
+
+for input in ${inputs[*]}
+do
+	for method in ${methods[*]}
+	do	
+		for lable in {1..1} #number of runs
+		do
+			for p in 42
+			do
+				taskset -c 0-13 ./exprun $method $input 15 10 $p $lable	
+			done		
+		done
+	done
+done
+
+
