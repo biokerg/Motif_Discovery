@@ -1,8 +1,8 @@
 all: 
-	g++ pfem.cpp -o pfem --std=c++11 
+	g++ tfem.cpp -o tfem --std=c++11 
 
 debug:
-	g++ pfem.cpp -o pfem --std=c++11 -g 
+	g++ tfem.cpp -o tfem --std=c++11 -g 
 	
 clean: 
-	rm pfem
+	rm tfem
