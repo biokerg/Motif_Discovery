@@ -1,7 +1,7 @@
 #!/bin/bash
 inputs=("1-ps00117" "2-ps51656" "3-ps51164" "4-ps51819" "5-ps50216" "6-ps01071" "8-ps00373" "9-ps50042" "10-ps50001" "11-ps51375" "12-ps50860" "13-ps50011")
 
-methods=( "pfem")
+methods=( "tfem")
 
 for input in ${inputs[*]}
 do
