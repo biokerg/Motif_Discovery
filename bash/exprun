@@ -27,7 +27,7 @@ case $1 in
 		echo ""
 		echo "Example:"
 		echo " > exprun tfem ps00117 12 10 3"
-		echo "------> Which runs tfem for ps0017 sequence file to find 10 kamars with 12 width. the results will be stored in pfem_K12_N10_3 folder"
+		echo "------> Which runs tfem for ps0017 sequence file to find 10 kamars with 12 width. the results will be stored in tfem_K12_N10_3 folder"
 		echo ""
 		EXEC=""
 		
