@@ -14,20 +14,20 @@ case $1 in
 	#	EXEC="$EXEC_DIR/meme $INPUT_DIR/fasta/$2.fasta -protein -maxsize 100000000 -w $3 -nmotifs $4 -p $5 -oc $OUTPUT_DIR"
 	#	;;	
 	
-	pfem)
-		EXEC_DIR=$EXEC_ROOT/PFEM
-		#export EXEC="/usr/bin/time -a -o $OUTPUT_DIR/timing.txt $EXEC_DIR/pfem $INPUT_DIR/text/$2.txt .$3"
-		EXEC="$EXEC_DIR/pfem $INPUT_DIR/text/$2.txt -t 0.01 -k $3 -n $4 -p $5 -o $OUTPUT_DIR/output.csv"
+	tfem)
+		EXEC_DIR=$EXEC_ROOT/TFEM
+		#export EXEC="/usr/bin/time -a -o $OUTPUT_DIR/timing.txt $EXEC_DIR/tfem $INPUT_DIR/text/$2.txt .$3"
+		EXEC="$EXEC_DIR/tfem $INPUT_DIR/text/$2.txt -t 0.01 -k $3 -n $4 -p $5 -o $OUTPUT_DIR/output.csv"
 		;;	
 	
 		
 	*)
 		echo "Usage:"
-		echo "exprun meme|pfem SequenceName KamarWidth NumberOfMotifs Lable"
+		echo "exprun meme|tfem SequenceName KamarWidth NumberOfMotifs Lable"
 		echo ""
 		echo "Example:"
-		echo " > exprun pfem ps00117 12 10 3"
-		echo "------> Which runs pfem for ps0017 sequence file to find 10 kamars with 12 width. the results will be stored in pfem_K12_N10_3 folder"
+		echo " > exprun tfem ps00117 12 10 3"
+		echo "------> Which runs tfem for ps0017 sequence file to find 10 kamars with 12 width. the results will be stored in pfem_K12_N10_3 folder"
 		echo ""
 		EXEC=""
 		
