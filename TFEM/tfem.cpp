@@ -54,7 +54,7 @@ void error(string msg)
 	cout << "\t-t T \tthe minimum similarity threshold. The default is T=0.01 that implies no limitation on the minimum similarity. 0<T<=1" << endl;
 	cout << "\t-o OutputFilePath" << endl;
 	cout << "\t-v \tShows the output on the command line." << endl;
-	cout << "\t-p \tthe number of threads." << endl;
+	//cout << "\t-p \tthe number of threads." << endl;
 	exit(0);
 }
 
@@ -69,8 +69,8 @@ void parse(int argc, char **argv)
 				error("not enough arguments!");
 			if (s == "-k")
 				kWidth = stoi(argv[i + 1]);
-			if (s == "-p")
-				P = stoi(argv[i + 1]);
+			//if (s == "-p")
+			//	P = stoi(argv[i + 1]);
 			else if (s == "-n")
 				nMotifs = stoi(argv[i + 1]);
 			else if (s == "-t")
